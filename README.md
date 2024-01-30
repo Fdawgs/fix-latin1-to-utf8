@@ -23,9 +23,10 @@ npm i fix-latin1-to-utf8
 ## Example usage
 
 ```js
-const fixLatin1ToUtf8 = require('fix-latin1-to-utf8');
+const fixLatin1ToUtf8 = require("fix-latin1-to-utf8");
 
-const latin1String = 'This is a UTF-8 string that was converted from Latin-1â€š but the conversion was not great.';
+const latin1String =
+	"This is a UTF-8 string that was converted from Latin-1â€š but the conversion was not great.";
 const utf8String = fixLatin1ToUtf8(latin1String);
 
 console.log(utf8String);
@@ -39,10 +40,9 @@ Contributions are welcome, and any help is greatly appreciated!
 See [the contributing guide](https://github.com/Fdawgs/.github/blob/main/CONTRIBUTING.md) for details on how to get started.
 Please adhere to this project's [Code of Conduct](https://github.com/Fdawgs/.github/blob/main/CODE_OF_CONDUCT.md) when contributing.
 
-
 ## Acknowledgements
 
-- **Tex Texin** - Creator of the [UTF-8 Encoding Debugging Chart](http://www.i18nqa.com/debug/utf8-debug.html)
+-   **Tex Texin** - Creator of the [UTF-8 Encoding Debugging Chart](http://www.i18nqa.com/debug/utf8-debug.html)
 
 ## License
 
