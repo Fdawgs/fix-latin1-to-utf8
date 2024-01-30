@@ -1,0 +1,89 @@
+{
+	"name": "fix-latin1-to-utf8",
+	"version": "1.0.0",
+	"description": "Fix encoding errors when converting from Latin-1 (and Windows-1252) to UTF-8",
+	"keywords": [
+		"iso-8859-1",
+		"iso8859-1",
+		"latin-1",
+		"latin1",
+		"utf8",
+		"windows-1252",
+		"windows1252"
+	],
+	"main": "src/index.js",
+	"type": "commonjs",
+	"types": "types/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Fdawgs/fix-latin1-to-utf8.git"
+	},
+	"homepage": "https://github.com/Fdawgs/fix-latin1-to-utf8",
+	"bugs": {
+		"url": "https://github.com/Fdawgs/fix-latin1-to-utf8/issues"
+	},
+	"license": "MIT",
+	"author": "Frazer Smith <frazer.dev@outlook.com>",
+	"funding": "https://github.com/sponsors/Fdawgs",
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"scripts": {
+		"build": "tsc",
+		"jest": "jest",
+		"jest:coverage": "jest --coverage",
+		"lint": "eslint . --cache --ext js,jsx --ignore-path .gitignore",
+		"lint:fix": "npm run lint -- --fix",
+		"lint:licenses": "node scripts/license-checker.js",
+		"lint:prettier": "prettier . -c -u",
+		"lint:prettier:fix": "prettier . -w -u",
+		"prepare": "husky",
+		"test": "npm run lint && npm run lint:prettier && npm run jest"
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"src/**/*.js"
+		],
+		"coverageReporters": [
+			"text",
+			"lcovonly"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 100,
+				"functions": 100,
+				"lines": 100,
+				"statements": 100
+			}
+		},
+		"testEnvironment": "node",
+		"testTimeout": 10000
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^18.5.0",
+		"@commitlint/config-conventional": "^18.5.0",
+		"@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
+		"@types/jest": "^29.5.11",
+		"eslint": "^8.56.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-jest": "^27.6.3",
+		"eslint-plugin-jsdoc": "^48.0.2",
+		"eslint-plugin-promise": "^6.1.1",
+		"eslint-plugin-regexp": "^2.2.0",
+		"eslint-plugin-security": "^2.1.0",
+		"husky": "^9.0.6",
+		"jest": "^29.7.0",
+		"license-checker": "^25.0.1",
+		"prettier": "^3.2.4",
+		"spdx-copyleft": "^1.0.0",
+		"typescript": "^5.3.3",
+		"upath": "^2.0.1"
+	}
+}

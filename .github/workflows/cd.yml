@@ -1,0 +1,100 @@
+name: CD
+
+# **What it does**: Automatically generates releases and release notes.
+# **Why we have it**: Allows development to focus on higher value work.
+
+on:
+    push:
+        branches:
+            - main
+    # Allows this workflow to be run manually from the Actions tab
+    workflow_dispatch:
+
+jobs:
+    release:
+        name: Create/Update Release Pull Request
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            pull-requests: write
+        outputs:
+            release_created: ${{ steps.release.outputs.release_created }}
+        steps:
+            - name: Release Please
+              id: release
+              # Staying on v3 due to incomplete migration guide for v4
+              uses: google-github-actions/release-please-action@v3
+              with:
+                  changelog-types: '[ { "type": "feat", "section": "Features", "hidden": false }, { "type": "fix", "section": "Bug fixes", "hidden": false }, { "type": "build", "section": "Dependencies", "hidden": false }, { "type": "chore", "section": "Miscellaneous", "hidden": false }, { "type": "ci", "section": "Continuous integration", "hidden": false }, { "type": "perf", "section": "Improvements", "hidden": false }, { "type": "refactor", "section": "Improvements", "hidden": false }, { "type": "style", "section": "Miscellaneous", "hidden": false }, { "type": "docs", "section": "Documentation", "hidden": false }]'
+                  release-type: node
+                  package-name: fix-latin1-to-utf8
+
+    publish-npm:
+        name: Publish to NPM
+        needs: release
+        if: needs.release.outputs.release_created == 'true'
+        runs-on: ubuntu-latest
+        environment: main
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v4
+              with:
+                  persist-credentials: false
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: lts/*
+                  registry-url: https://registry.npmjs.org
+
+            - name: Publish to NPM
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              # Build docs and TS definitions, and remove dev values
+              # from package.json before publishing to reduce package size
+              run: |
+                  npm i --ignore-scripts
+                  npm run build
+                  npm pkg delete commitlint devDependencies jest scripts
+                  npm publish --access public --ignore-scripts --provenance
+
+    publish-ghp:
+        name: Publish to GitHub Packages
+        needs: release
+        if: needs.release.outputs.release_created == 'true'
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
+            packages: write
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v4
+              with:
+                  persist-credentials: false
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: lts/*
+                  registry-url: https://npm.pkg.github.com
+                  scope: "@fdawgs"
+
+            - name: Scope package
+              run: |
+                  pkgName=$(npm pkg get name | tr -d '"')
+                  npm pkg set name="@fdawgs/$pkgName"
+
+            - name: Publish to GitHub Packages
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              # Build docs and TS definitions, and remove dev values
+              # from package.json before publishing to reduce package size
+              run: |
+                  npm i --ignore-scripts
+                  npm run build
+                  npm pkg delete commitlint devDependencies jest scripts
+                  npm publish --access public --ignore-scripts --provenance

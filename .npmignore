@@ -1,0 +1,6 @@
+# `package.json` is published to npm, so everything we add is included in the installed tarball.
+# Removing the `files` key and replacing it with this `.npmignore` saves some bytes, which
+# should improve installation performance slightly
+*
+!src/index.js
+!types/index.d.ts

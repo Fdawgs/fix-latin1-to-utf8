@@ -1,0 +1,35 @@
+version: 2
+updates:
+    - package-ecosystem: github-actions
+      commit-message:
+          include: scope
+          prefix: ci
+      directory: /
+      ignore:
+          # Staying on v3 due to incomplete migration guide for v4
+          - dependency-name: google-github-actions/release-please-action
+            update-types: ["version-update:semver-major"]
+      open-pull-requests-limit: 20
+      schedule:
+          interval: monthly
+
+    - package-ecosystem: npm
+      commit-message:
+          include: scope
+          prefix: build
+      directory: /
+      groups:
+          commitlint:
+              patterns:
+                  - "@commitlint*"
+          eslint:
+              patterns:
+                  - "eslint*"
+      ignore:
+          # Below are dependencies that have migrated to ESM
+          # in their next major version so we can't use them
+          - dependency-name: is-html
+            update-types: ["version-update:semver-major"]
+      open-pull-requests-limit: 20
+      schedule:
+          interval: monthly

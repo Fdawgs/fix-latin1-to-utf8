@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"outDir": "types",
+		"resolveJsonModule": true,
+		"target": "ES2022",
+	},
+	"include": ["src/index.js"],
+}
