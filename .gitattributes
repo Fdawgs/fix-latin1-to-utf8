@@ -1,0 +1,2 @@
+# Set default behaviour to automatically convert line endings
+* text=auto eol=lf

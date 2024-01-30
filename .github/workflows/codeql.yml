@@ -1,0 +1,45 @@
+name: CodeQL Analysis
+
+# **What it does**: This runs CodeQL on this repo.
+# **Why we have it**: Security scanning.
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+        paths:
+            - "**/*.html"
+            - "**/*.js"
+            - "**/*.yml"
+        types: [opened, ready_for_review, reopened, synchronize]
+
+permissions:
+    security-events: write
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+    group: "${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}"
+    cancel-in-progress: true
+
+jobs:
+    build:
+        if: github.event.pull_request.draft == false
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v4
+              with:
+                  persist-credentials: false
+
+            # Initialises the CodeQL tools for scanning
+            - name: Initialise CodeQL
+              uses: github/codeql-action/init@v3
+              with:
+                  languages: javascript
+                  config-file: ./.github/codeql-config.yml
+
+            - name: Perform CodeQL analysis
+              uses: github/codeql-action/analyze@v3
