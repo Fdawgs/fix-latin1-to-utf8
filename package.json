@@ -1,8 +1,9 @@
 {
 	"name": "fix-latin1-to-utf8",
 	"version": "1.0.0",
-	"description": "Fix encoding errors when converting from Latin-1 (and Windows-1252) to UTF-8",
+	"description": "Fix errors when converting Latin-1 encoded text to UTF-8",
 	"keywords": [
+		"encoding",
 		"iso-8859-1",
 		"iso8859-1",
 		"latin-1",
