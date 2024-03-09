@@ -22,6 +22,8 @@ npm i fix-latin1-to-utf8
 
 ## Example usage
 
+Please refer to the [JSDoc comments in the source code](./src/index.js) or the [generated type definitions](https://www.npmjs.com/package/fix-latin1-to-utf8?activeTab=code) for information on the available options.
+
 ```js
 const fixLatin1ToUtf8 = require("fix-latin1-to-utf8");
 
