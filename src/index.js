@@ -149,7 +149,7 @@ function fixLatin1ToUtf8(str) {
 	return str.replace(matchRegex, (match) => replacements[match]).normalize();
 }
 
-module.exports = fixLatin1ToUtf8; // CommonJS default export
+module.exports = fixLatin1ToUtf8; // CommonJS export
 module.exports.default = fixLatin1ToUtf8; // ESM default export
 module.exports.fixLatin1ToUtf8 = fixLatin1ToUtf8; // TypeScript and named export
 module.exports.replacements = replacements;
