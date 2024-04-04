@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.2...v1.0.3) (2024-04-04)
+
+
+### Miscellaneous
+
+* **index:** correct inline export comment ([94f3925](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/94f392501dc920fa599eaac8fe096dce1a03ada7))
+
+
+### Continuous integration
+
+* **ci:** audit package signatures and provenance attestations ([23d3ca1](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/23d3ca10c9672a4917aabd931f0d18ac5d6de916))
+* **deps:** bump wagoid/commitlint-github-action from 5 to 6 ([#8](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/8)) ([9377e03](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9377e03443d58ea6c71e681e25d043dc09afecee))
+* use latest node lts version ([465ce4c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/465ce4c98c118ce24190db7f353c5772ad004141))
+
 ## [1.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.1...v1.0.2) (2024-03-12)
 
 
