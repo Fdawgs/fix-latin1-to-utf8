@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.2...v1.0.3) (2024-07-29)
+
+
+### Continuous integration
+
+* **cd:** sort release note sections alphabetically ([21188b0](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/21188b083712e4344fb81df1054de0b36344c029))
+* **ci:** add node 22 to test matrix ([9d7e312](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9d7e312aab9a5fbc317a92ae5390b42c0c83b04b))
+* **ci:** audit package signatures and provenance attestations ([23d3ca1](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/23d3ca10c9672a4917aabd931f0d18ac5d6de916))
+* **deps:** bump coverallsapp/github-action from 2.2.3 to 2.3.0 ([#15](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/15)) ([80cdd17](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/80cdd172b9986080cb95ccf739c9272c13b20446))
+* **deps:** bump wagoid/commitlint-github-action from 5 to 6 ([#8](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/8)) ([9377e03](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9377e03443d58ea6c71e681e25d043dc09afecee))
+* use latest node lts version ([465ce4c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/465ce4c98c118ce24190db7f353c5772ad004141))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([7dc93ed](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7dc93ededce10b5f76266331355b9f3e0ec51624))
+
+
+### Miscellaneous
+
+* **.husky/commit-msg:** remove `npx` usage ([036e33f](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/036e33f591700db25132a81b846ccc3ba451422f))
+* **index:** correct inline export comment ([94f3925](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/94f392501dc920fa599eaac8fe096dce1a03ada7))
+* **package:** change author email ([e73b84f](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/e73b84f43dc029c901aca70b2a7ef64d32e6d38b))
+* **package:** use shorter semver syntax ([6ce9edd](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6ce9edd41743abab2c7d105fdc758d3812889f63))
+* **tsconfig:** update target to `ES2023` ([0a89a8d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0a89a8de1940b8fe61ee75cac130414b7c89c481))
+
 ## [1.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.1...v1.0.2) (2024-03-12)
 
 
