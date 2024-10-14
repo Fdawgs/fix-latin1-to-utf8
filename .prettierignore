@@ -140,6 +140,7 @@ package.json
 API.md
 CHANGELOG.md
 types/
+.github/release-please/manifest.json
 
 # lock files
 bun.lockb
