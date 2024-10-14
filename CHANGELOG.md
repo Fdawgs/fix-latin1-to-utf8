@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.3...v1.0.4) (2024-10-14)
+
+
+### Continuous integration
+
+* **cd:** migrate to manifest config ([c8f4158](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/c8f41587e2b825c86a093c3d585f943641433888))
+
+
+### Miscellaneous
+
+* **.npmrc:** enforce strict engine checks ([75b8407](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/75b84073abca95fd64c3ca92ea27e7f4ed12595a))
+* **.npmrc:** remove excess whitespace ([fe82789](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/fe82789ffd9a93234e60a3db2febcc59244fc73c))
+
 ## [1.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.2...v1.0.3) (2024-07-29)
 
 
