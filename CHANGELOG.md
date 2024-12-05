@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.3...v1.0.4) (2024-12-05)
+
+
+### Continuous integration
+
+* **cd:** migrate to manifest config ([c8f4158](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/c8f41587e2b825c86a093c3d585f943641433888))
+* **ci:** use major tag for coverallsapp/github-action ([17584b4](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/17584b4a8f7daa79fedb13348e7bdfb752947473))
+* **deps:** bump coverallsapp/github-action from 2.3.0 to 2.3.1 ([#32](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/32)) ([9636f6d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9636f6d29b3e12120e398710f2d42ec5d4f1b8d8))
+* **deps:** bump coverallsapp/github-action from 2.3.1 to 2.3.4 ([#33](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/33)) ([6231740](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/62317407cd11ade0764e5589af968f2557900a71))
+
+
+### Documentation
+
+* **readme:** rename ci badge to reflect workflow ([58fdebb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/58fdebb897491a02d7087991fd96d73319866bbc))
+* **readme:** rename correct badge ([815e43d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/815e43d6835d92e9cf33d764d7afa00e5f238a70))
+
+
+### Miscellaneous
+
+* **.npmrc:** enforce strict engine checks ([75b8407](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/75b84073abca95fd64c3ca92ea27e7f4ed12595a))
+* **.npmrc:** remove excess whitespace ([fe82789](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/fe82789ffd9a93234e60a3db2febcc59244fc73c))
+
 ## [1.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.2...v1.0.3) (2024-07-29)
 
 
