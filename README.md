@@ -44,7 +44,7 @@ Please adhere to this project's [Code of Conduct](https://github.com/Fdawgs/.git
 
 ## Acknowledgements
 
--   **Tex Texin** - Creator of the [UTF-8 Encoding Debugging Chart](http://www.i18nqa.com/debug/utf8-debug.html)
+- **Tex Texin** - Creator of the [UTF-8 Encoding Debugging Chart](http://www.i18nqa.com/debug/utf8-debug.html)
 
 ## License
 
