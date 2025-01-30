@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.0...v2.0.1) (2025-01-30)
+
+
+### Miscellaneous
+
+* use impersonal language ([d52108e](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/d52108eaccd9d5d2a45026b663cf771677a2d1ed))
+
 ## [2.0.0](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.3...v2.0.0) (2025-01-13)
 
 
