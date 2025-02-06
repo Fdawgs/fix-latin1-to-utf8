@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.1](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.0...v2.0.1) (2025-02-06)
+
+
+### Continuous integration
+
+* **automerge:** flush buffer to disk ([3796127](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/379612718f35e205151f992ea5d586945f365d8c))
+
+
+### Dependencies
+
+* **deps-dev:** remove upath ([d99846b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/d99846b1de4c9722fde7f93c289b0a474fcfdbfc))
+
+
+### Documentation
+
+* **api:** add api documentation ([#41](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/41)) ([102803c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/102803cb45b57893df2b52c7fc394f08b2163b73))
+
+
+### Miscellaneous
+
+* use impersonal language ([d52108e](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/d52108eaccd9d5d2a45026b663cf771677a2d1ed))
+
 ## [2.0.0](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v1.0.3...v2.0.0) (2025-01-13)
 
 
