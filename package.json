@@ -31,7 +31,7 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"build:docs": "jsdoc2md src/index.js > API.md",
+		"build:docs": "jsdoc2md src/index.js > API.md --EOL posix",
 		"lint": "eslint . --cache --ext js,jsx --ignore-path .gitignore",
 		"lint:fix": "npm run lint -- --fix",
 		"lint:licenses": "node scripts/license-checker.js",
