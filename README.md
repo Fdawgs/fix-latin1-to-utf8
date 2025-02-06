@@ -20,9 +20,11 @@ Install using `npm`:
 npm i fix-latin1-to-utf8
 ```
 
-## Example usage
+## API
 
-Please refer to the [JSDoc comments in the source code](./src/index.js) or the [generated type definitions](https://www.npmjs.com/package/fix-latin1-to-utf8?activeTab=code) for information on the available options.
+API documentation can be found [here](https://github.com/Fdawgs/fix-latin1-to-utf8/blob/main/API.md).
+
+## Example usage
 
 ```js
 const fixLatin1ToUtf8 = require("fix-latin1-to-utf8");
