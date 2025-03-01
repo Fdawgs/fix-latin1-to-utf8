@@ -65,6 +65,6 @@
 		"license-checker": "^25.0.1",
 		"prettier": "^3.4.2",
 		"spdx-copyleft": "^1.0.0",
-		"typescript": "~5.7.3"
+		"typescript": "~5.8.2"
 	}
 }
