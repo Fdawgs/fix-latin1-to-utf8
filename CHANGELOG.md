@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.1...v2.0.2) (2025-03-30)
+
+
+### Continuous integration
+
+* **.github:** pin actions to commit-hash; set permissions at job level ([f6f7b5d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f6f7b5daad35da445ecccb4b432d646f8429f1f8))
+* add top-level workflow permissions ([#46](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/46)) ([13dadaa](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/13dadaa60c6739a537ac1c785aaaa85b1954a4a0))
+* **codeql:** analyse github actions ([b60edbb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b60edbbc58c22eae206583f73a748032ab4a5890))
+
+
+### Dependencies
+
+* **deps-dev:** bump typescript from 5.7.3 to 5.8.2 ([#43](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/43)) ([9f8eac1](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9f8eac1777ed685e901cf22c52b536f6414328b6))
+
 ## [2.0.1](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.0...v2.0.1) (2025-02-06)
 
 
