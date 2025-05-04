@@ -4,7 +4,10 @@ const { describe, it } = require("node:test");
 const { fixLatin1ToUtf8, replacements } = require("./index");
 
 describe("fixLatin1ToUtf8", () => {
-	for (const [actual, expected] of Object.entries(replacements)) {
+	const entries = Object.entries(replacements);
+	const entriesLength = entries.length;
+	for (let i = 0; i < entriesLength; i += 1) {
+		const [actual, expected] = entries[i];
 		it(`Replaces ${actual} with ${expected}`, (t) => {
 			t.plan(1);
 			t.assert.strictEqual(fixLatin1ToUtf8(actual), expected);
