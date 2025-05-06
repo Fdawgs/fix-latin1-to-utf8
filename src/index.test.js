@@ -7,7 +7,9 @@ describe("fixLatin1ToUtf8", () => {
 	const entries = Object.entries(replacements);
 	const entriesLength = entries.length;
 	for (let i = 0; i < entriesLength; i += 1) {
-		const [actual, expected] = entries[i];
+		// Destructuring adds overhead, so use index access
+		const actual = entries[i][0];
+		const expected = entries[i][1];
 		it(`Replaces ${actual} with ${expected}`, (t) => {
 			t.plan(1);
 			t.assert.strictEqual(fixLatin1ToUtf8(actual), expected);
