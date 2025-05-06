@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.1...v2.0.2) (2025-05-06)
+
+
+### Continuous integration
+
+* **.github:** pin actions to commit-hash; set permissions at job level ([f6f7b5d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f6f7b5daad35da445ecccb4b432d646f8429f1f8))
+* add top-level workflow permissions ([#46](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/46)) ([13dadaa](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/13dadaa60c6739a537ac1c785aaaa85b1954a4a0))
+* **codeql:** analyse github actions ([b60edbb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b60edbbc58c22eae206583f73a748032ab4a5890))
+* **deps:** bump actions/dependency-review-action from 4.5.0 to 4.6.0 ([#51](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/51)) ([1a8e5a2](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/1a8e5a2b67228abd05a5777868b8945dba8d6986))
+* **deps:** bump actions/setup-node from 4.3.0 to 4.4.0 ([#50](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/50)) ([0032a7c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0032a7c055cdf62bea799619f9c60b86bfd687f5))
+* **deps:** bump github/codeql-action from 3.28.12 to 3.28.13 ([#47](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/47)) ([a952989](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/a952989299aec06c8310665dc7eaa4bc2d26aa71))
+* **deps:** bump github/codeql-action from 3.28.13 to 3.28.16 ([#49](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/49)) ([6df8152](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6df8152a838026c884e0845c92bbba8afe762597))
+* use latest node lts version for unit tests ([#48](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/48)) ([43a749d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/43a749d07d38660b213f48659a64a666fb21051b))
+
+
+### Dependencies
+
+* **deps-dev:** bump typescript from 5.7.3 to 5.8.2 ([#43](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/43)) ([9f8eac1](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9f8eac1777ed685e901cf22c52b536f6414328b6))
+
+
+### Tests
+
+* **index:** replace destructuring ([#53](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/53)) ([968ff06](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/968ff0646cef42fc95b929128479aff2842ea008))
+* **index:** use `for` loop over `for...of` loop ([#52](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/52)) ([07506a8](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/07506a84f63c11fbaeaf80f401f851898003cb8a))
+
 ## [2.0.1](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.0...v2.0.1) (2025-02-06)
 
 
