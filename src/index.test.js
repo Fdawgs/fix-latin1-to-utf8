@@ -1,5 +1,6 @@
 "use strict";
 
+// eslint-disable-next-line n/no-unsupported-features/node-builtins -- Tests, not in distributed code
 const { describe, it } = require("node:test");
 const { fixLatin1ToUtf8, replacements } = require("./index");
 
