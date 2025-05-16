@@ -21,7 +21,7 @@ describe("fixLatin1ToUtf8", () => {
 		t.assert.strictEqual(fixLatin1ToUtf8("â€šÆ’â€žâ€¦â€\u00A0"), "‚ƒ„…†");
 	});
 
-	it("Does not mutate a string without Latin-1 characters", (t) => {
+	it("Does not alter a string without Latin-1 characters", (t) => {
 		t.plan(1);
 		const str = "Hello, world!";
 		t.assert.strictEqual(fixLatin1ToUtf8(str), str);
