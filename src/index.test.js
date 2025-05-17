@@ -3,7 +3,7 @@
 const { describe, it } = require("node:test");
 const { fixLatin1ToUtf8, replacements } = require("./index");
 
-describe("fixLatin1ToUtf8", () => {
+describe("fixLatin1ToUtf8 function", () => {
 	const entries = Object.entries(replacements);
 	const entriesLength = entries.length;
 	for (let i = 0; i < entriesLength; i += 1) {

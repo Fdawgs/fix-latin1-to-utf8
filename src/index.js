@@ -140,6 +140,7 @@ const matchRegex = new RegExp(Object.keys(replacements).join("|"), "gu");
  * @see {@link http://www.i18nqa.com/debug/utf8-debug.html | UTF-8 Encoding Debugging Chart}
  * @param {string} str - The string to be converted.
  * @returns {string} The converted string.
+ * @throws If the argument is not a string.
  */
 function fixLatin1ToUtf8(str) {
 	if (typeof str !== "string") {
