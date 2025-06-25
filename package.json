@@ -34,7 +34,7 @@
 		"build:docs": "jsdoc2md src/index.js > API.md --EOL posix",
 		"lint": "eslint . --cache",
 		"lint:fix": "npm run lint -- --fix",
-		"lint:licenses": "node scripts/license-checker.js",
+		"lint:licenses": "licensee --errors-only --production",
 		"lint:prettier": "prettier . -c -u",
 		"lint:prettier:fix": "prettier . -w -u",
 		"prepare": "husky",
@@ -56,9 +56,8 @@
 		"eslint": "^9.29.0",
 		"husky": "^9.1.7",
 		"jsdoc-to-markdown": "^9.1.1",
-		"license-checker": "^25.0.1",
+		"licensee": "^11.1.1",
 		"prettier": "^3.4.2",
-		"spdx-copyleft": "^1.0.0",
 		"typescript": "~5.8.2"
 	}
 }
