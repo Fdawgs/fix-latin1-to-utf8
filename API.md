@@ -1,8 +1,8 @@
 ## Constants
 
 <dl>
-<dt><a href="#replacements">replacements</a> : <code>Record.&lt;string, string&gt;</code></dt>
-<dd><p>Object containing Latin-1 characters and their corresponding UTF-8 characters.</p>
+<dt><a href="#REPLACEMENTS">REPLACEMENTS</a> : <code>Record.&lt;string, string&gt;</code></dt>
+<dd><p>Latin-1 characters and their corresponding UTF-8 characters.</p>
 </dd>
 </dl>
 
@@ -14,10 +14,10 @@
 </dd>
 </dl>
 
-<a name="replacements"></a>
+<a name="REPLACEMENTS"></a>
 
-## replacements : <code>Record.&lt;string, string&gt;</code>
-Object containing Latin-1 characters and their corresponding UTF-8 characters.
+## REPLACEMENTS : <code>Record.&lt;string, string&gt;</code>
+Latin-1 characters and their corresponding UTF-8 characters.
 
 **Kind**: global constant  
 <a name="fixLatin1ToUtf8"></a>
