@@ -1,10 +1,10 @@
 "use strict";
 
 /**
- * @description Object containing Latin-1 characters and their corresponding UTF-8 characters.
+ * @description Latin-1 characters and their corresponding UTF-8 characters.
  * @type {Record<string, string>}
  */
-const replacements = {
+const REPLACEMENTS = Object.freeze({
 	// Actual: Expected
 	"â‚¬": "€",
 	"â€š": "‚",
@@ -128,11 +128,11 @@ const replacements = {
 	"Ã½": "ý",
 	"Ã¾": "þ",
 	"Ã¿": "ÿ",
-};
+});
 
 // Cache immutable regex as they are expensive to create and garbage collect
 // eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
-const matchRegex = new RegExp(Object.keys(replacements).join("|"), "gu");
+const MATCH_REG = new RegExp(Object.keys(REPLACEMENTS).join("|"), "gu");
 
 /**
  * @author Frazer Smith
@@ -147,10 +147,10 @@ function fixLatin1ToUtf8(str) {
 		throw new TypeError("Expected a string");
 	}
 
-	return str.replace(matchRegex, (match) => replacements[match]).normalize();
+	return str.replace(MATCH_REG, (match) => REPLACEMENTS[match]).normalize();
 }
 
 module.exports = fixLatin1ToUtf8; // CommonJS export
 module.exports.default = fixLatin1ToUtf8; // ESM default export
 module.exports.fixLatin1ToUtf8 = fixLatin1ToUtf8; // TypeScript and named export
-module.exports.replacements = replacements;
+module.exports.REPLACEMENTS = REPLACEMENTS;

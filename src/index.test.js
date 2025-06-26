@@ -2,10 +2,10 @@
 
 // eslint-disable-next-line n/no-unsupported-features/node-builtins -- Tests, not in distributed code
 const { describe, it } = require("node:test");
-const { fixLatin1ToUtf8, replacements } = require("./index");
+const { fixLatin1ToUtf8, REPLACEMENTS } = require("./index");
 
 describe("fixLatin1ToUtf8 function", () => {
-	const entries = Object.entries(replacements);
+	const entries = Object.entries(REPLACEMENTS);
 	const entriesLength = entries.length;
 	for (let i = 0; i < entriesLength; i += 1) {
 		// Destructuring adds overhead, so use index access
