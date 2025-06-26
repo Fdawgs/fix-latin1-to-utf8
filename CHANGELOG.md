@@ -1,5 +1,51 @@
 # Changelog
 
+## [2.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.1...v2.0.2) (2025-06-26)
+
+
+### Bug fixes
+
+* **index:** freeze replacements object ([#65](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/65)) ([e013c74](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/e013c74d944c6e6c11a7c978f17ae1f8db69461b))
+
+
+### Continuous integration
+
+* **.github:** pin actions to commit-hash; set permissions at job level ([f6f7b5d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f6f7b5daad35da445ecccb4b432d646f8429f1f8))
+* add node 24 to test matrix ([#54](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/54)) ([7005602](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7005602b5fc8bd28fd0117d383f1ed6af39f2c70))
+* add top-level workflow permissions ([#46](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/46)) ([13dadaa](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/13dadaa60c6739a537ac1c785aaaa85b1954a4a0))
+* **cd:** grant issue write permissions for tags ([#61](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/61)) ([33d8967](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/33d8967f642cc832e84baccc5d716ce7dc66329e))
+* **codeql:** analyse github actions ([b60edbb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b60edbbc58c22eae206583f73a748032ab4a5890))
+* **deps:** bump actions/dependency-review-action from 4.5.0 to 4.6.0 ([#51](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/51)) ([1a8e5a2](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/1a8e5a2b67228abd05a5777868b8945dba8d6986))
+* **deps:** bump actions/dependency-review-action from 4.6.0 to 4.7.1 ([#58](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/58)) ([5123261](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5123261f873d7df5d26bb696cc1f69340657d20a))
+* **deps:** bump actions/setup-node from 4.3.0 to 4.4.0 ([#50](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/50)) ([0032a7c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0032a7c055cdf62bea799619f9c60b86bfd687f5))
+* **deps:** bump github/codeql-action from 3.28.12 to 3.28.13 ([#47](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/47)) ([a952989](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/a952989299aec06c8310665dc7eaa4bc2d26aa71))
+* **deps:** bump github/codeql-action from 3.28.13 to 3.28.16 ([#49](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/49)) ([6df8152](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6df8152a838026c884e0845c92bbba8afe762597))
+* **deps:** bump github/codeql-action from 3.28.16 to 3.28.18 ([#59](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/59)) ([5da8e7c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5da8e7c067d3e35f30f6ca62d44e1a5d2a73d1ea))
+* use latest node lts version for unit tests ([#48](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/48)) ([43a749d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/43a749d07d38660b213f48659a64a666fb21051b))
+* use tags for immutable github actions ([#60](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/60)) ([3ed3453](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/3ed345351ea54a0495ecdeb568cca57b3e9751bc))
+
+
+### Dependencies
+
+* **deps-dev:** bump dev dependencies ([#66](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/66)) ([b304662](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b3046620da6cdb1055a69b4389cd8a522a17f0dd))
+* **deps-dev:** bump typescript from 5.7.3 to 5.8.2 ([#43](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/43)) ([9f8eac1](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9f8eac1777ed685e901cf22c52b536f6414328b6))
+* **deps-dev:** migrate to eslint flat config ([#55](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/55)) ([ab33322](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ab33322026d84c2989d3d41a0dd9ec9b0dc60783))
+* **deps-dev:** replace license-checker with licensee ([#62](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/62)) ([4504f79](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/4504f79e1968e797589c5ead0a006ebd2fc0ee22))
+
+
+### Miscellaneous
+
+* **index:** document throws ([#57](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/57)) ([621f494](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/621f4942e3381970e910ab452cd64a0279348533))
+* **license:** replace date range with `-present` ([#63](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/63)) ([7666e75](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7666e751ee109c814f4284c8ca8f2fac28f86e17))
+* **package:** sort scripts ([#64](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/64)) ([596cf59](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/596cf592e5a8705547d157172dd2671d9f88ce7b))
+
+
+### Tests
+
+* **index:** remove misleading `mutate` mention ([#56](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/56)) ([2d11fb9](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/2d11fb9f73487ea921916c07df9c6f6c3ed3dbfe))
+* **index:** replace destructuring ([#53](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/53)) ([968ff06](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/968ff0646cef42fc95b929128479aff2842ea008))
+* **index:** use `for` loop over `for...of` loop ([#52](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/52)) ([07506a8](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/07506a84f63c11fbaeaf80f401f851898003cb8a))
+
 ## [2.0.1](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.0...v2.0.1) (2025-02-06)
 
 
