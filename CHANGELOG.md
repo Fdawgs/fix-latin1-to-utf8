@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.2...v2.0.3) (2025-07-07)
+
+
+### Dependencies
+
+* **dependabot:** add eslint config to eslint group ([#67](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/67)) ([7620044](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/762004465041a56588b326fa887fec5f377a4d91))
+
 ## [2.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.1...v2.0.2) (2025-06-26)
 
 
