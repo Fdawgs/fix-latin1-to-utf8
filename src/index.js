@@ -147,7 +147,7 @@ function fixLatin1ToUtf8(str) {
 		throw new TypeError("Expected a string");
 	}
 
-	return str.replace(MATCH_REG, (match) => REPLACEMENTS[match]).normalize();
+	return str.replace(MATCH_REG, (match) => REPLACEMENTS[match]);
 }
 
 module.exports = fixLatin1ToUtf8; // CommonJS export
