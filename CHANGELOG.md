@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.2...v2.0.3) (2025-07-22)
+
+
+### Continuous integration
+
+* **cd:** only scope package if it is not already ([#71](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/71)) ([8f45543](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/8f455436a3e901a93279343c3ff1e1a39cd68e85))
+
+
+### Dependencies
+
+* **dependabot:** add eslint config to eslint group ([#67](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/67)) ([7620044](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/762004465041a56588b326fa887fec5f377a4d91))
+
+
+### Improvements
+
+* **index:** remove redundant `normalize()` call ([#69](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/69)) ([91e8ff6](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/91e8ff65c494c39114bb3d873d369f91c402ae81))
+
 ## [2.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.1...v2.0.2) (2025-06-26)
 
 
