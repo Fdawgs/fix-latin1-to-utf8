@@ -6,11 +6,11 @@
 [![Coverage status](https://coveralls.io/repos/github/Fdawgs/fix-latin1-to-utf8/badge.svg?branch=main)](https://coveralls.io/github/Fdawgs/fix-latin1-to-utf8?branch=main)
 [![code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 
-> Node.js module to fix errors when converting Latin-1 encoded text to UTF-8
+> Node.js module to fix mojibake when converting Latin-1 encoded text to UTF-8
 
 # Overview
 
-When converting Latin-1 (or Windows-1252) encoded text to UTF-8, some characters may be incorrectly converted. This module fixes those errors.
+When converting Latin-1 (or Windows-1252) encoded text to UTF-8, some characters may be incorrectly converted (mojibake). This module fixes those errors.
 
 ## Installation
 
