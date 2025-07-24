@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.3...v2.0.4) (2025-07-24)
+
+
+### Documentation
+
+* **readme:** mention mojibake ([#72](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/72)) ([aaa04eb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/aaa04ebfcd03d3e120280c385c445aedbc51a058))
+
 ## [2.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.2...v2.0.3) (2025-07-22)
 
 
