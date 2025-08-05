@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.3...v2.0.4) (2025-08-05)
+
+
+### Continuous integration
+
+* **link-check:** retry on 429 response ([#75](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/75)) ([096c181](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/096c181701ecf39ff1c8f377b2c126d89d7fc35e))
+
+
+### Dependencies
+
+* **deps-dev:** bump typescript from 5.8.3 to 5.9.2 ([#74](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/74)) ([11e4a66](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/11e4a662d049819ccb91e6f23d379b4000893dbf))
+
+
+### Documentation
+
+* **readme:** mention mojibake ([#72](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/72)) ([aaa04eb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/aaa04ebfcd03d3e120280c385c445aedbc51a058))
+
 ## [2.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.2...v2.0.3) (2025-07-22)
 
 
