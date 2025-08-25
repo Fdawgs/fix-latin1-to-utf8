@@ -132,7 +132,7 @@ const REPLACEMENTS = Object.freeze({
 
 // Cache immutable regex as they are expensive to create and garbage collect
 // eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
-const MATCH_REG = new RegExp(Object.keys(REPLACEMENTS).join("|"), "gu");
+const MATCH_REG = new RegExp(Object.keys(REPLACEMENTS).join("|"), "gv");
 
 /**
  * @author Frazer Smith
