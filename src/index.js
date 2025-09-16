@@ -2,7 +2,7 @@
 
 /**
  * @description Latin-1 characters and their corresponding UTF-8 characters.
- * @type {Record<string, string>}
+ * @type {Readonly<Record<string, string>>}
  */
 const REPLACEMENTS = Object.freeze({
 	// Actual: Expected
