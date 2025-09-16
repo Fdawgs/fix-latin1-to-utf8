@@ -1,7 +1,7 @@
 ## Constants
 
 <dl>
-<dt><a href="#REPLACEMENTS">REPLACEMENTS</a> : <code>Readonly.&lt;Record.&lt;string, string&gt;&gt;</code></dt>
+<dt><a href="#REPLACEMENTS">REPLACEMENTS</a> : <code>Record.&lt;string, string&gt;</code></dt>
 <dd><p>Latin-1 characters and their corresponding UTF-8 characters.</p>
 </dd>
 </dl>
@@ -16,7 +16,7 @@
 
 <a name="REPLACEMENTS"></a>
 
-## REPLACEMENTS : <code>Readonly.&lt;Record.&lt;string, string&gt;&gt;</code>
+## REPLACEMENTS : <code>Record.&lt;string, string&gt;</code>
 Latin-1 characters and their corresponding UTF-8 characters.
 
 **Kind**: global constant  
