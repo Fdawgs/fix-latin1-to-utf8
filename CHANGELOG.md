@@ -1,5 +1,41 @@
 # Changelog
 
+## [2.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.3...v2.0.4) (2025-09-16)
+
+
+### Continuous integration
+
+* **cd:** use oicd for publishing to npm ([#76](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/76)) ([263c7f5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/263c7f56369d0951cdce5071bd36bb45535ce6ef))
+* **deps:** bump actions/checkout from 4 to 5 ([#79](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/79)) ([02d2ff9](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/02d2ff9c9c4672f192e5a733c2c4a7c8ecdfaf4f))
+* **deps:** bump actions/setup-node from 4 to 5 ([#82](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/82)) ([4600ade](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/4600ade2e927c08a2fca37ecee3bcefc863bf1d8))
+* **link-check:** retry on 429 response ([#75](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/75)) ([096c181](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/096c181701ecf39ff1c8f377b2c126d89d7fc35e))
+
+
+### Dependencies
+
+* **dependabot:** add cooldowns ([#84](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/84)) ([c803377](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/c803377fd0d5f15057766b7db724fd8dfaef1faf))
+* **deps-dev:** bump typescript from 5.8.3 to 5.9.2 ([#74](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/74)) ([11e4a66](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/11e4a662d049819ccb91e6f23d379b4000893dbf))
+
+
+### Documentation
+
+* **readme:** mention mojibake ([#72](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/72)) ([aaa04eb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/aaa04ebfcd03d3e120280c385c445aedbc51a058))
+
+
+### Improvements
+
+* **index:** enable regex charset and unicode with `v` flag ([#78](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/78)) ([0bc22e6](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0bc22e6d4193fd34d63a5ea28ac719fccdfa722a))
+
+
+### Miscellaneous
+
+* add `.nvmrc` file ([#83](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/83)) ([85667bb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/85667bbffd0572a0b1a5fc6249120b66ef6796e7))
+
+
+### Tests
+
+* **index:** add testcontext jsdoc to satisfy ts2775 on assertions ([#77](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/77)) ([ddcee4b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ddcee4bce794373a0ef7ea21f28e07298e6eb35f))
+
 ## [2.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.2...v2.0.3) (2025-07-22)
 
 
