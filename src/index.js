@@ -131,8 +131,9 @@ const REPLACEMENTS = Object.freeze({
 });
 
 // Cache immutable regex as they are expensive to create and garbage collect
+const LATIN1_PATTERN = /[ãâåæë]/iu;
 // eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
-const MATCH_REG = new RegExp(Object.keys(REPLACEMENTS).join("|"), "gv");
+const MATCH_REG = new RegExp(Object.keys(REPLACEMENTS).join("|"), "gu");
 
 /**
  * @author Frazer Smith
@@ -145,6 +146,11 @@ const MATCH_REG = new RegExp(Object.keys(REPLACEMENTS).join("|"), "gv");
 function fixLatin1ToUtf8(str) {
 	if (typeof str !== "string") {
 		throw new TypeError("Expected a string");
+	}
+
+	// Early return if no matches
+	if (!LATIN1_PATTERN.test(str)) {
+		return str;
 	}
 
 	return str.replace(MATCH_REG, (match) => REPLACEMENTS[match]);
