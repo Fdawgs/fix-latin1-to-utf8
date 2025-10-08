@@ -29,7 +29,7 @@ Fixes common encoding errors when converting from Latin-1 (and Windows-1252) to 
 **Returns**: <code>string</code> - The converted string.  
 **Throws**:
 
-- If the argument is not a string.
+- <code>TypeError</code> If the argument is not a string.
 
 **See**: [ UTF-8 Encoding Debugging Chart](http://www.i18nqa.com/debug/utf8-debug.html)  
 **Author**: Frazer Smith  
