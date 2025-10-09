@@ -1,5 +1,62 @@
 # Changelog
 
+## [2.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.3...v2.0.4) (2025-10-09)
+
+
+### Bug fixes
+
+* **index:** mark `REPLACEMENTS` type as `Readonly` ([#85](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/85)) ([aa8759b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/aa8759b430414fad66ee9ddbd30eef2a95466fd4))
+
+
+### Continuous integration
+
+* **cd:** protect against cache poisoning ([#91](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/91)) ([f4e7ec5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f4e7ec56bd35e0917e5ade24be0ac7d6fabc526c))
+* **cd:** use oicd for publishing to npm ([#76](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/76)) ([263c7f5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/263c7f56369d0951cdce5071bd36bb45535ce6ef))
+* **ci:** add typecheck to lint job ([#92](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/92)) ([fc591e9](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/fc591e9cf43346605a58af1213590fe4f74c5759))
+* **ci:** check dependabot prs originate from repo ([#89](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/89)) ([8e41cc5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/8e41cc57b5abddd09ff04d6deee2c63238a69657))
+* **ci:** ignore dependabot prs in coverage updates ([#98](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/98)) ([9f05fea](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9f05feafbdc30a0b742434c5c9ce4192b97f931d))
+* **deps:** bump actions/checkout from 4 to 5 ([#79](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/79)) ([02d2ff9](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/02d2ff9c9c4672f192e5a733c2c4a7c8ecdfaf4f))
+* **deps:** bump actions/dependency-review-action from 4.7.1 to 4.7.3 ([#81](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/81)) ([6acf2e1](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6acf2e11d3a5e6938f0b73fd167ccab1d10bc27a))
+* **deps:** bump actions/dependency-review-action from 4.7.3 to 4.8.0 ([#93](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/93)) ([02f6919](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/02f691906d31a5eaeeacfba441069261f438b120))
+* **deps:** bump actions/setup-node from 4 to 5 ([#82](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/82)) ([4600ade](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/4600ade2e927c08a2fca37ecee3bcefc863bf1d8))
+* **deps:** bump googleapis/release-please-action from 4.2.0 to 4.3.0 ([#80](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/80)) ([767aa77](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/767aa771c8de66edf25d20688d62c449dbdcb302))
+* **link-check:** retry on 429 response ([#75](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/75)) ([096c181](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/096c181701ecf39ff1c8f377b2c126d89d7fc35e))
+* tidy conditional checks ([#90](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/90)) ([d0bd099](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/d0bd099c42234be0fff9c8c8dd57aadc9e15ab4a))
+* use `.nvmrc` for node-version ([#96](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/96)) ([38a3bdc](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/38a3bdc874dd8083da969dc8ad0f3e0586a8d640))
+
+
+### Dependencies
+
+* **dependabot:** add cooldowns ([#84](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/84)) ([c803377](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/c803377fd0d5f15057766b7db724fd8dfaef1faf))
+* **deps-dev:** bump dev dependencies ([#99](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/99)) ([5e6e871](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5e6e871f56ef155d89c666c26fd64cf74a27a557))
+* **deps-dev:** bump the commitlint group with 2 updates ([#94](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/94)) ([6f91928](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6f91928159deccc0f441aee3e14a0c4befa5a08e))
+* **deps-dev:** bump typescript from 5.8.3 to 5.9.2 ([#74](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/74)) ([11e4a66](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/11e4a662d049819ccb91e6f23d379b4000893dbf))
+* **tsconfig:** add typescript declaration map ([#86](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/86)) ([9cbbe4b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9cbbe4b2f58ffbc8502367f61a85ba5b2c413965))
+
+
+### Documentation
+
+* **readme:** mention mojibake ([#72](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/72)) ([aaa04eb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/aaa04ebfcd03d3e120280c385c445aedbc51a058))
+
+
+### Improvements
+
+* **index:** add early return ([#95](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/95)) ([912ced6](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/912ced6d54f062ac6e8b240b171e34f7744a7ed0))
+* **index:** enable regex charset and unicode with `v` flag ([#78](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/78)) ([0bc22e6](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0bc22e6d4193fd34d63a5ea28ac719fccdfa722a))
+
+
+### Miscellaneous
+
+* **.devcontainer:** add devcontainer ([#87](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/87)) ([5ae3ab5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5ae3ab5194e7f9db86e1cb9259e313b7bc3dd4c1))
+* **.npmrc:** ignore scripts ([#88](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/88)) ([cda9d48](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cda9d48cae9e24ac654157925e51ca75f766869d))
+* add `.nvmrc` file ([#83](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/83)) ([85667bb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/85667bbffd0572a0b1a5fc6249120b66ef6796e7))
+* **index:** add error type to throw jsdoc tag ([#97](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/97)) ([b7fee8e](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b7fee8e5be54635d7e5d9f9287386826679a5d89))
+
+
+### Tests
+
+* **index:** add testcontext jsdoc to satisfy ts2775 on assertions ([#77](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/77)) ([ddcee4b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ddcee4bce794373a0ef7ea21f28e07298e6eb35f))
+
 ## [2.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.2...v2.0.3) (2025-07-22)
 
 
