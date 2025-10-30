@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.5](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.4...v2.0.5) (2025-10-30)
+
+
+### Miscellaneous
+
+* rename lint scripts to reflect use ([#101](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/101)) ([cc59e32](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cc59e321e05f23cac57179f9fcb083e74acfb897))
+
 ## [2.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.3...v2.0.4) (2025-10-09)
 
 
