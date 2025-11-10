@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.0.5](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.4...v2.0.5) (2025-11-10)
+
+
+### Continuous integration
+
+* **ci:** only send coverage to coveralls on main ([#100](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/100)) ([b877926](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b8779260530d229ebbd6733fd7addcb96ce483ac))
+* **deps:** bump actions/dependency-review-action from 4.8.0 to 4.8.1 ([#105](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/105)) ([6ae3beb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6ae3beb2384231eed04bd184f1aa5b40abcccac6))
+* **deps:** bump actions/setup-node from 5 to 6 ([#104](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/104)) ([ab78bf5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ab78bf56c36f917d4a820a8ea7116244221c2bd8))
+* **deps:** bump fastify/github-action-merge-dependabot ([#107](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/107)) ([431d697](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/431d6977a5aee3ad4def8fb557e5f2ad50cff17f))
+* **deps:** bump github/codeql-action from 3 to 4 ([#103](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/103)) ([0ea6f79](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0ea6f79935792e2946140c02394c08e28adb02f1))
+* **deps:** bump googleapis/release-please-action from 4.3.0 to 4.4.0 ([#108](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/108)) ([6aa2487](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6aa2487f7ac01b1f139d319a49460dd9369e4c54))
+* **deps:** bump JustinBeckwith/linkinator-action from 1.11.0 to 2.3 ([#106](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/106)) ([faa6658](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/faa6658cf4b53fc79368538b25d2f0bed713778e))
+
+
+### Dependencies
+
+* **deps-dev:** bump @fdawgs/eslint-config in the eslint group ([#109](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/109)) ([26525c6](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/26525c67d1abba80b6040ceb79d190a434f9d459))
+
+
+### Miscellaneous
+
+* rename lint scripts to reflect use ([#101](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/101)) ([cc59e32](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cc59e321e05f23cac57179f9fcb083e74acfb897))
+
 ## [2.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.3...v2.0.4) (2025-10-09)
 
 
