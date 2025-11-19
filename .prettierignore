@@ -147,3 +147,7 @@ bun.lockb
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+
+# Test files
+test/fixtures/
+test/__snapshots__/
