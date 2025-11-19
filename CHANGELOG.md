@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.0.5](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.4...v2.0.5) (2025-11-19)
+
+
+### Continuous integration
+
+* add lock-threads workflow; fix concurrency groups ([#114](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/114)) ([0db29cd](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0db29cd5f0804922e5fd60c29f049b62657fba6b))
+* **ci:** only send coverage to coveralls on main ([#100](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/100)) ([b877926](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b8779260530d229ebbd6733fd7addcb96ce483ac))
+* **deps:** bump actions/dependency-review-action from 4.8.0 to 4.8.1 ([#105](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/105)) ([6ae3beb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6ae3beb2384231eed04bd184f1aa5b40abcccac6))
+* **deps:** bump actions/setup-node from 5 to 6 ([#104](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/104)) ([ab78bf5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ab78bf56c36f917d4a820a8ea7116244221c2bd8))
+* **deps:** bump fastify/github-action-merge-dependabot ([#107](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/107)) ([431d697](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/431d6977a5aee3ad4def8fb557e5f2ad50cff17f))
+* **deps:** bump github/codeql-action from 3 to 4 ([#103](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/103)) ([0ea6f79](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0ea6f79935792e2946140c02394c08e28adb02f1))
+* **deps:** bump googleapis/release-please-action from 4.3.0 to 4.4.0 ([#108](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/108)) ([6aa2487](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6aa2487f7ac01b1f139d319a49460dd9369e4c54))
+* **deps:** bump JustinBeckwith/linkinator-action from 1.11.0 to 2.3 ([#106](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/106)) ([faa6658](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/faa6658cf4b53fc79368538b25d2f0bed713778e))
+* **link-check:** use reusable workflow ([#116](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/116)) ([0cfda46](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0cfda46862b7c32dfb7cedc6273fb3dddb839401))
+* **lock-threads:** set cron to every day ([#115](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/115)) ([2ae2805](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/2ae280566d91431bd4c3bbcfc25c4b54cb13cedc))
+
+
+### Dependencies
+
+* **deps-dev:** bump @fdawgs/eslint-config in the eslint group ([#109](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/109)) ([26525c6](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/26525c67d1abba80b6040ceb79d190a434f9d459))
+* **deps-dev:** remove husky ([#117](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/117)) ([fad2936](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/fad29363e900c7d849fa96a988b53f625546fd34))
+* **deps-dev:** remove type definition map and `API.md` ([#119](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/119)) ([f989c59](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f989c595057e12467aab59d74fa492c1933dcdfc))
+
+
+### Miscellaneous
+
+* **.editorconfig:** add file to enforce consistent coding styles ([#110](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/110)) ([4af8e33](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/4af8e33eee157c1efeb63661a67ea72424733bf5))
+* **.editorconfig:** use spaces for yml file indentation ([#113](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/113)) ([8aa3dab](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/8aa3dab17324d352297f448f1eb0bb021cd1e85f))
+* **eslint.config:** stop applying to jsx files ([#112](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/112)) ([104115f](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/104115fa7a676c51746d0ff544d46098634b2ad5))
+* move tests from src to test dir ([#118](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/118)) ([4ebdf98](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/4ebdf9863749dc23a45288d1371c022e35363e7d))
+* rename lint scripts to reflect use ([#101](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/101)) ([cc59e32](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cc59e321e05f23cac57179f9fcb083e74acfb897))
+
 ## [2.0.4](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.3...v2.0.4) (2025-10-09)
 
 
