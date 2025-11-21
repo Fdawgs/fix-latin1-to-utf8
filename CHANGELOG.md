@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.6](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.5...v2.0.6) (2025-11-21)
+
+
+### Continuous integration
+
+* **codeql:** check cjs, mjs, and ts files ([#122](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/122)) ([9b6200b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9b6200bd53a2e3233ce93ac0ab09a69544cdfc00))
+
+
+### Miscellaneous
+
+* **.devcontainer:** remove prepare script call ([#123](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/123)) ([0b1948b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0b1948badf868bfeb1f3bdff617df7b9a81564ea))
+* tidy dotfiles, remove redundant deps ([#120](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/120)) ([7daf5dd](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7daf5dd9940888b868f2188b58f56d37194aa1d3))
+
 ## [2.0.5](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.4...v2.0.5) (2025-11-19)
 
 
