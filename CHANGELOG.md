@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.6](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.5...v2.0.6) (2025-12-02)
+
+
+### Continuous integration
+
+* **codeql:** check cjs, mjs, and ts files ([#122](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/122)) ([9b6200b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9b6200bd53a2e3233ce93ac0ab09a69544cdfc00))
+* **deps:** bump actions/checkout from 5 to 6 ([#126](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/126)) ([7a30b9a](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7a30b9accf915bfa0d4a5113bfee188cb257b932))
+* **deps:** bump actions/dependency-review-action from 4.8.1 to 4.8.2 ([#125](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/125)) ([51cd58e](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/51cd58eab104e1ba3a478e461e9d10a2526b109a))
+* **deps:** bump coverallsapp/github-action from 2.3.6 to 2.3.7 ([#124](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/124)) ([cdec59f](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cdec59f5d1fa31a41c0993e760fbd4a3fa71760b))
+
+
+### Dependencies
+
+* **deps-dev:** bump @eslint/compat in the eslint group ([#127](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/127)) ([5ca3ace](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5ca3ace97119bc0ac697597cae9ec4baca3c8654))
+
+
+### Miscellaneous
+
+* **.devcontainer:** remove prepare script call ([#123](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/123)) ([0b1948b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0b1948badf868bfeb1f3bdff617df7b9a81564ea))
+* tidy dotfiles, remove redundant deps ([#120](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/120)) ([7daf5dd](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7daf5dd9940888b868f2188b58f56d37194aa1d3))
+
 ## [2.0.5](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.4...v2.0.5) (2025-11-19)
 
 
