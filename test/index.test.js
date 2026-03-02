@@ -32,7 +32,7 @@ describe("fixLatin1ToUtf8 function", () => {
 
 	it("Throws an error if the argument is not a string", (/** @type {TestContext} */ t) => {
 		t.plan(1);
-		// @ts-expect-error
+		// @ts-expect-error Testing invalid argument
 		t.assert.throws(() => fixLatin1ToUtf8(123), TypeError);
 	});
 });
