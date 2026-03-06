@@ -16,7 +16,7 @@ When converting Latin-1 (or Windows-1252) encoded text to UTF-8, some characters
 
 Install using `npm`:
 
-```bash
+```sh
 npm i fix-latin1-to-utf8
 ```
 
