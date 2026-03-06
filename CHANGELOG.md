@@ -1,5 +1,43 @@
 # Changelog
 
+## [2.0.6](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.5...v2.0.6) (2026-03-06)
+
+
+### Continuous integration
+
+* **cd:** make provenance publishing explicit ([#132](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/132)) ([cdea6e7](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cdea6e7a74700efaac6e9679a3e978e65b46cdc4))
+* **codeql:** check cjs, mjs, and ts files ([#122](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/122)) ([9b6200b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9b6200bd53a2e3233ce93ac0ab09a69544cdfc00))
+* **deps:** bump actions/checkout from 5 to 6 ([#126](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/126)) ([7a30b9a](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7a30b9accf915bfa0d4a5113bfee188cb257b932))
+* **deps:** bump actions/dependency-review-action from 4.8.1 to 4.8.2 ([#125](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/125)) ([51cd58e](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/51cd58eab104e1ba3a478e461e9d10a2526b109a))
+* **deps:** bump actions/dependency-review-action from 4.8.2 to 4.8.3 ([#133](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/133)) ([60bbf34](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/60bbf34163ba144d6cb8b8bf05d0167fff00d9a8))
+* **deps:** bump coverallsapp/github-action from 2.3.6 to 2.3.7 ([#124](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/124)) ([cdec59f](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cdec59f5d1fa31a41c0993e760fbd4a3fa71760b))
+
+
+### Dependencies
+
+* **deps-dev:** bump @eslint/compat in the eslint group ([#127](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/127)) ([5ca3ace](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5ca3ace97119bc0ac697597cae9ec4baca3c8654))
+* **deps-dev:** bump @types/node from 24.10.4 to 25.0.3 ([#128](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/128)) ([0ee3912](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0ee39129d6007a1b6e50a3ee4a8f817ade75cbb4))
+* **deps-dev:** bump c8 from 10.1.3 to 11.0.0 ([#135](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/135)) ([2d9ad12](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/2d9ad127077f8dece2c4d512971c1ed05c0eafe8))
+* **deps-dev:** bump licensee from 11.1.1 to 12.0.1 ([#129](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/129)) ([f061d09](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f061d097f8d6ba45109c1f063239906d9945d450))
+
+
+### Documentation
+
+* **readme:** use shell over bash for command examples ([#137](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/137)) ([5817b6d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5817b6d946c56f376c4139216c8a06711ec791f0))
+
+
+### Miscellaneous
+
+* **.devcontainer:** remove prepare script call ([#123](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/123)) ([0b1948b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0b1948badf868bfeb1f3bdff617df7b9a81564ea))
+* **license:** add contact email ([#130](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/130)) ([f6b4ac2](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f6b4ac2d7efb76a6f8b08116d9e8022e32f628d6))
+* **package:** stop running `lint:prettier` twice on `test` call ([#131](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/131)) ([ce18113](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ce181134dbfe56e8daf15d9bf3da4db03b38d331))
+* tidy dotfiles, remove redundant deps ([#120](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/120)) ([7daf5dd](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7daf5dd9940888b868f2188b58f56d37194aa1d3))
+
+
+### Tests
+
+* **index:** correct inline ts comment ([#136](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/136)) ([ec415af](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ec415af37a879828ac990e19825b6ba55554207c))
+
 ## [2.0.5](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.4...v2.0.5) (2025-11-19)
 
 
