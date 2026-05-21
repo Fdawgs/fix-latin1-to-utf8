@@ -1,5 +1,55 @@
 # Changelog
 
+## [2.0.6](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.5...v2.0.6) (2026-05-21)
+
+
+### Continuous integration
+
+* **cd:** make provenance publishing explicit ([#132](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/132)) ([cdea6e7](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cdea6e7a74700efaac6e9679a3e978e65b46cdc4))
+* **ci:** use reusable code quality workflow ([#145](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/145)) ([803eeeb](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/803eeebfd733e75c2768177a35548b5d64772a91))
+* **codeql:** check cjs, mjs, and ts files ([#122](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/122)) ([9b6200b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/9b6200bd53a2e3233ce93ac0ab09a69544cdfc00))
+* **deps:** bump actions/checkout from 5 to 6 ([#126](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/126)) ([7a30b9a](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7a30b9accf915bfa0d4a5113bfee188cb257b932))
+* **deps:** bump actions/dependency-review-action from 4.8.1 to 4.8.2 ([#125](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/125)) ([51cd58e](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/51cd58eab104e1ba3a478e461e9d10a2526b109a))
+* **deps:** bump actions/dependency-review-action from 4.8.2 to 4.8.3 ([#133](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/133)) ([60bbf34](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/60bbf34163ba144d6cb8b8bf05d0167fff00d9a8))
+* **deps:** bump actions/dependency-review-action from 4.8.3 to 4.9.0 ([#139](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/139)) ([110f5a6](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/110f5a644a7ac86770168ed7c5af6377369b113a))
+* **deps:** bump coverallsapp/github-action from 2.3.6 to 2.3.7 ([#124](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/124)) ([cdec59f](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/cdec59f5d1fa31a41c0993e760fbd4a3fa71760b))
+* **deps:** bump fastify/github-action-merge-dependabot ([#141](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/141)) ([eb7f8fd](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/eb7f8fd5234ce1aaaa8097ed29ba3c75e1fa8422))
+* **deps:** bump googleapis/release-please-action from 4.4.0 to 5.0.0 ([#142](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/142)) ([46482ea](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/46482ea219bd718dc5e279b69e8bb64181b81bc5))
+* **link-check:** use sha instead of tag ([#146](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/146)) ([32ac222](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/32ac222b88ac6a08c002965fa080f13b8f1f6ca9))
+* **lock-threads:** reduce frequency from daily to monthly ([#148](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/148)) ([96c6ca5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/96c6ca5c55b940da0d72bb886a8e139dfb001ab5))
+* use full-length commit sha for github owned actions ([#151](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/151)) ([a04838d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/a04838da3130783c5cd729dcd4003a627783391c))
+
+
+### Dependencies
+
+* **dependabot:** group github-owned updates ([#147](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/147)) ([02cf0f1](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/02cf0f1f31efab760ad5b42511542a3994f74e71))
+* **deps-dev:** bump @eslint/compat in the eslint group ([#127](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/127)) ([5ca3ace](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5ca3ace97119bc0ac697597cae9ec4baca3c8654))
+* **deps-dev:** bump @types/node from 24.10.4 to 25.0.3 ([#128](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/128)) ([0ee3912](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0ee39129d6007a1b6e50a3ee4a8f817ade75cbb4))
+* **deps-dev:** bump c8 from 10.1.3 to 11.0.0 ([#135](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/135)) ([2d9ad12](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/2d9ad127077f8dece2c4d512971c1ed05c0eafe8))
+* **deps-dev:** bump licensee from 11.1.1 to 12.0.1 ([#129](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/129)) ([f061d09](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f061d097f8d6ba45109c1f063239906d9945d450))
+* **deps-dev:** bump typescript from 5.9.3 to 6.0.3 ([#143](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/143)) ([576c044](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/576c04444f95a401e7bf2f2fdd731374c50eaaee))
+
+
+### Documentation
+
+* **readme:** use shell over bash for command examples ([#137](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/137)) ([5817b6d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5817b6d946c56f376c4139216c8a06711ec791f0))
+
+
+### Miscellaneous
+
+* **.devcontainer:** remove prepare script call ([#123](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/123)) ([0b1948b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/0b1948badf868bfeb1f3bdff617df7b9a81564ea))
+* **.npmrc:** add min-release-age ([#144](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/144)) ([00fc949](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/00fc94996e5cc88842f24fb4a36c66431f3104b8))
+* **.nvmrc:** remove redundant prefix ([#149](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/149)) ([46fcad4](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/46fcad4aa065227f03052cb539f6f83371a74d28))
+* **.vscode:** update js and telemetry settings ([#138](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/138)) ([a3bd8fe](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/a3bd8fe82ba3b205d93adeae252727fbc5230b50))
+* **license:** add contact email ([#130](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/130)) ([f6b4ac2](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/f6b4ac2d7efb76a6f8b08116d9e8022e32f628d6))
+* **package:** stop running `lint:prettier` twice on `test` call ([#131](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/131)) ([ce18113](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ce181134dbfe56e8daf15d9bf3da4db03b38d331))
+* tidy dotfiles, remove redundant deps ([#120](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/120)) ([7daf5dd](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/7daf5dd9940888b868f2188b58f56d37194aa1d3))
+
+
+### Tests
+
+* **index:** correct inline ts comment ([#136](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/136)) ([ec415af](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ec415af37a879828ac990e19825b6ba55554207c))
+
 ## [2.0.5](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.4...v2.0.5) (2025-11-19)
 
 
