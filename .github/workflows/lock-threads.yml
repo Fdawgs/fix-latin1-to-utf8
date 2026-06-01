@@ -30,4 +30,4 @@ jobs:
         permissions:
             issues: write
             pull-requests: write
-        uses: fdawgs/workflows/.github/workflows/reusable-lock-threads.yml@d1e4b4f907d13700a600837a18e8d01c56b179bd # v2.1.0
+        uses: fdawgs/workflows/.github/workflows/reusable-lock-threads.yml@44826d838a90cd1bbbef4a51331bd91c51627962 # v2.1.1
