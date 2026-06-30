@@ -138,7 +138,7 @@ const MATCH_REG = new RegExp(Object.keys(REPLACEMENTS).join("|"), "gu");
 /**
  * @author Frazer Smith
  * @description Fixes common encoding errors when converting from Latin-1 (and Windows-1252) to UTF-8.
- * @see {@link http://www.i18nqa.com/debug/utf8-debug.html | UTF-8 Encoding Debugging Chart}
+ * @see {@link https://www.i18nqa.com/debug/utf8-debug.html | UTF-8 Encoding Debugging Chart}
  * @param {string} str - The string to be converted.
  * @returns {string} The converted string.
  * @throws {TypeError} If the argument is not a string.
