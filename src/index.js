@@ -4,7 +4,9 @@
  * @description Latin-1 characters and their corresponding UTF-8 characters.
  * @type {Readonly<Record<string, string>>}
  */
+// @ts-expect-error -- TS cannot infer that __proto__ is a special property and not part of the record type
 const REPLACEMENTS = Object.freeze({
+	__proto__: null,
 	// Actual: Expected
 	"â‚¬": "€",
 	"â€š": "‚",
