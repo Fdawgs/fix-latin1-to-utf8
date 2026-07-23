@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.7](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.6...v2.0.7) (2026-07-23)
+
+
+### Bug fixes
+
+* **index:** missing mapping and invisible characters ([#182](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/182)) ([ae743ec](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ae743ec06dc1855f7cb5263bbfa064958874f5f3))
+
+
+### Continuous integration
+
+* **ci:** add node 26 to test matrix ([#150](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/150)) ([323605c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/323605cf68502d0bf635d6c010d1f8e537ed052a))
+
 ## [2.0.6](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.5...v2.0.6) (2026-07-12)
 
 
