@@ -13,6 +13,7 @@
 		"latin-1",
 		"latin1",
 		"mojibake",
+		"utf-8",
 		"utf8",
 		"windows-1252",
 		"windows1252"
