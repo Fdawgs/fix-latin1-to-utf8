@@ -1,5 +1,47 @@
 # Changelog
 
+## [3.0.0](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.7...v3.0.0) (2026-08-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* minimum supported version bumped from node 20 to 22
+
+### Bug fixes
+
+* **index:** soft hyphen mapping emitting two characters ([#188](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/188)) ([b45bd3c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b45bd3cf1ec85cc4a796ba5a0fe49062c96d25a8))
+
+
+### Continuous integration
+
+* **deps:** bump coverallsapp/github-action from 2.3.7 to 2.3.8 ([#193](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/193)) ([e96cbee](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/e96cbeeaf5e7fb427ea3363a25ee2bd0d56d2156))
+* **deps:** bump the github-owned group with 2 updates ([#192](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/192)) ([5cda13c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5cda13cd3915f4f4ab9bb6d22df488d083d7d74b))
+* **deps:** bump the github-owned group with 4 updates ([#186](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/186)) ([2e27c93](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/2e27c93677de1b05dd74a02afb064bd3e070d300))
+
+
+### Dependencies
+
+* **deps-dev:** bump c8 from 11.0.0 to 12.0.0 ([#185](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/185)) ([d2e285a](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/d2e285a08b0b4d6c3b2a884c464ca2d17347f0d0))
+* **deps-dev:** bump prettier from 3.8.4 to 3.9.5 ([#184](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/184)) ([8a08c0b](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/8a08c0b75bdb6f5373c44f80d92472356e9f4ff6))
+* **deps-dev:** bump prettier from 3.9.5 to 3.9.6 ([#191](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/191)) ([2edba71](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/2edba717308e837f74f14409eeb0f186af4bf478))
+* **deps-dev:** bump the commitlint group across 1 directory with 2 updates ([#154](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/154)) ([b123d7c](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b123d7c50caa7cf5b27f5648327703fbc8cc98bf))
+
+
+### Documentation
+
+* **readme:** correct example output ([#187](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/187)) ([30d86db](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/30d86dbb713851876b7a78d7a34a1f32769b0400))
+
+
+### Features
+
+* **index:** correct iso-8859-1 mojibake ([#194](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/194)) ([fbd2745](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/fbd2745685841c949289b80bce03c2c0e8efdadf))
+
+
+### Miscellaneous
+
+* drop support for node 20 ([#189](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/189)) ([5f85ffa](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/5f85ffa5a7aa282310f02b18a290ee7571ed7a31))
+* **package:** add utf-8 keyword ([#195](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/195)) ([35f3db0](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/35f3db0a9b13b98e3589cacfc0da6c6f4aa1df45))
+
 ## [2.0.7](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.6...v2.0.7) (2026-07-23)
 
 
