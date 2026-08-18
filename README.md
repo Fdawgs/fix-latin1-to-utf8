@@ -7,11 +7,15 @@
 [![code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat)](https://github.com/prettier/prettier)
 [![OSSF Scorecard](https://api.scorecard.dev/projects/github.com/Fdawgs/fix-latin1-to-utf8/badge)](https://scorecard.dev/viewer/?uri=github.com/Fdawgs/fix-latin1-to-utf8)
 
-> Node.js module to fix mojibake when converting Latin-1 encoded text to UTF-8
+> Node.js module to fix ISO-8859-1 (Latin-1) and Windows-1252 (CP1252) mojibake in UTF-8 strings
 
 # Overview
 
-When converting Latin-1 (or Windows-1252) encoded text to UTF-8, some characters may be incorrectly converted (mojibake). This module fixes those errors.
+Decoding UTF-8 bytes as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) produces mojibake, where `’` becomes `â€™`.
+Once stored, no charset setting undoes it.
+
+The two encodings garble bytes `0x80`-`0x9F` differently; this module repairs both.
+Windows-1252 is widely treated as an extension of Latin-1, so is covered by this module.
 
 ## Installation
 

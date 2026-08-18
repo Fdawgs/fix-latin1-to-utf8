@@ -1,13 +1,19 @@
 "use strict";
 
 /**
- * @description Latin-1 characters and their corresponding UTF-8 characters.
+ * @description Mojibake sequences and the UTF-8 characters they stand for.
+ * ISO-8859-1 (Latin-1) and Windows-1252 (CP1252) disagree on bytes 0x80-0x9F,
+ * so both readings of every affected character are listed.
+ * @see {@link https://www.i18nqa.com/debug/utf8-debug.html | UTF-8 Encoding Debugging Chart}
+ * @see {@link https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1252.TXT | cp1252 to Unicode table}
+ * @see {@link https://www.unicode.org/Public/MAPPINGS/ISO8859/8859-1.TXT | ISO/IEC 8859-1:1998 to Unicode}
  * @type {Readonly<Record<string, string>>}
  */
 // @ts-expect-error -- TS cannot infer that __proto__ is a special property and not part of the record type
 const REPLACEMENTS = Object.freeze({
 	__proto__: null,
-	// Actual: Expected
+	// Mojibake: original
+	// Windows-1252 mojibake
 	"â‚¬": "€",
 	"â€š": "‚",
 	"Æ’": "ƒ",
@@ -131,19 +137,74 @@ const REPLACEMENTS = Object.freeze({
 	"Ã½": "ý",
 	"Ã¾": "þ",
 	"Ã¿": "ÿ",
+	// ISO-8859-1 mojibake
+	"â\u0082¬": "€",
+	"â\u0080\u009A": "‚",
+	"Æ\u0092": "ƒ",
+	"â\u0080\u009E": "„",
+	"â\u0080¦": "…",
+	"â\u0080\u00A0": "†",
+	"â\u0080¡": "‡",
+	"Ë\u0086": "ˆ",
+	"â\u0080°": "‰",
+	"â\u0080¹": "‹",
+	"Å\u0092": "Œ",
+	"â\u0080\u0098": "‘",
+	"â\u0080\u0099": "’",
+	"â\u0080\u009C": "“",
+	"â\u0080\u009D": "”",
+	"â\u0080¢": "•",
+	"â\u0080\u0093": "–",
+	"â\u0080\u0094": "—",
+	"Ë\u009C": "˜",
+	"â\u0084¢": "™",
+	"â\u0080º": "›",
+	"Å\u0093": "œ",
+	"Ã\u0080": "À",
+	"Ã\u0082": "Â",
+	"Ã\u0083": "Ã",
+	"Ã\u0084": "Ä",
+	"Ã\u0085": "Å",
+	"Ã\u0086": "Æ",
+	"Ã\u0087": "Ç",
+	"Ã\u0088": "È",
+	"Ã\u0089": "É",
+	"Ã\u008A": "Ê",
+	"Ã\u008B": "Ë",
+	"Ã\u008C": "Ì",
+	"Ã\u008E": "Î",
+	"Ã\u0091": "Ñ",
+	"Ã\u0092": "Ò",
+	"Ã\u0093": "Ó",
+	"Ã\u0094": "Ô",
+	"Ã\u0095": "Õ",
+	"Ã\u0096": "Ö",
+	"Ã\u0097": "×",
+	"Ã\u0098": "Ø",
+	"Ã\u0099": "Ù",
+	"Ã\u009A": "Ú",
+	"Ã\u009B": "Û",
+	"Ã\u009C": "Ü",
+	"Ã\u009E": "Þ",
+	"Ã\u009F": "ß",
 });
 
 // Cache immutable regex as they are expensive to create and garbage collect
-const LATIN1_PATTERN = /[ãâåæë]/iu;
+const MOJIBAKE_LEAD_PATTERN = /[ãâåæë]/iu;
+// Sort longest-first so a shorter key cannot shadow a longer one in alternation
 // eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
-const MATCH_REG = new RegExp(Object.keys(REPLACEMENTS).join("|"), "gu");
+const MATCH_REG = new RegExp(
+	Object.keys(REPLACEMENTS)
+		.sort((a, b) => b.length - a.length)
+		.join("|"),
+	"gu"
+);
 
 /**
  * @author Frazer Smith
- * @description Fixes common encoding errors when converting from Latin-1 (and Windows-1252) to UTF-8.
- * @see {@link https://www.i18nqa.com/debug/utf8-debug.html | UTF-8 Encoding Debugging Chart}
- * @param {string} str - The string to be converted.
- * @returns {string} The converted string.
+ * @description Fixes ISO-8859-1 (Latin-1) and Windows-1252 (CP1252) mojibake in UTF-8 strings.
+ * @param {string} str - The string to be fixed.
+ * @returns {string} The fixed string.
  * @throws {TypeError} If the argument is not a string.
  */
 function fixLatin1ToUtf8(str) {
@@ -152,7 +213,7 @@ function fixLatin1ToUtf8(str) {
 	}
 
 	// Early return if no matches
-	if (!LATIN1_PATTERN.test(str)) {
+	if (!MOJIBAKE_LEAD_PATTERN.test(str)) {
 		return str;
 	}
 
