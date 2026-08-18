@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v3.0.0...v3.0.1) (2026-08-18)
+
+
+### Continuous integration
+
+* **cd:** install latest npm 11 for trusted publishing ([#196](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/196)) ([b96aef5](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/b96aef5e9d7449f20d0e5e45bf2a63e0c840e178))
+
 ## [3.0.0](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v2.0.7...v3.0.0) (2026-08-18)
 
 
