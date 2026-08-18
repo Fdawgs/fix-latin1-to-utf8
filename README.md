@@ -31,11 +31,11 @@ Please refer to the [JSDoc comments in the source code](./src/index.js) or the [
 const fixLatin1ToUtf8 = require("fix-latin1-to-utf8");
 
 const latin1String =
-	"This is a UTF-8 string that was converted from Latin-1â€š but the conversion was not great.";
+	"This is a UTF-8 string that was converted from Latin-1, so cafÃ© became mojibake.";
 const utf8String = fixLatin1ToUtf8(latin1String);
 
 console.log(utf8String);
-// This is a UTF-8 string that was converted from Latin-1, but the conversion was not great.
+// This is a UTF-8 string that was converted from Latin-1, so café became mojibake.
 ```
 
 ## Contributing
