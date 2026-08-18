@@ -11,11 +11,12 @@
 
 # Overview
 
-Decoding UTF-8 bytes as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) produces mojibake, where `’` becomes `â€™`.
-Once stored, no charset setting undoes it.
+When ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) encoded text is misinterpreted as UTF-8, the resulting text is corrupted. This is referred to as "mojibake".
+Once this corrupted text is persisted, it cannot be recovered through charset configuration alone.
 
-The two encodings garble bytes `0x80`-`0x9F` differently; this module repairs both.
-Windows-1252 is widely treated as an extension of Latin-1, so is covered by this module.
+This module restores the original text.
+Latin-1 and Windows-1252 map the byte range `0x80`–`0x9F` in different ways, and both are handled.
+As Windows-1252 is widely treated as a superset of Latin-1, it is supported accordingly.
 
 ## Installation
 
