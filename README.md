@@ -12,11 +12,8 @@
 # Overview
 
 Decoding UTF-8 bytes as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) leaves ASCII intact but turns every non-ASCII character into mojibake.
-Once those characters are re-encoded as UTF-8, no charset setting can recover the original.
 
-This module restores the original characters.
-ISO-8859-1 reserves bytes `0x80`-`0x9F` for C1 control codes whilst Windows-1252 uses them for additional characters.
-Both encodings are handled.
+This module restores the original characters for both character encodings.
 
 ## Installation
 

@@ -43,34 +43,32 @@ describe("fixLatin1ToUtf8 function", () => {
 		});
 	}
 
-	it("REPLACEMENTS covers every Windows-1252 character above ASCII under both decoders, and nothing else", (/** @type {TestContext} */ t) => {
+	it("REPLACEMENTS contains all expected Latin-1 and Windows-1252 mojibake mappings", (/** @type {TestContext} */ t) => {
 		t.plan(1);
-		const expectedTable = new Map();
+		const expectedReplacements = new Map();
+		const unassignedBytes = new Set([0x81, 0x8d, 0x8f, 0x90, 0x9d]);
+
 		// Only bytes 0x80-0xFF can turn into mojibake. Below that is plain ASCII
 		for (let byte = 0x80; byte <= 0xff; byte += 1) {
-			const char = windows1252.decode(Buffer.from([byte]));
 			/**
 			 * Skip bytes 0x81, 0x8D, 0x8F, 0x90 and 0x9D: Windows-1252 leaves them
-			 * unassigned, so there is no character for REPLACEMENTS to recover. Node
-			 * decodes each to the C1 control of its own value (0x81 to U+0081).
-			 * Bytes 0xA0-0xFF also decode to their own value, but as printable
-			 * characters, so those are kept.
+			 * unassigned, so there is no character for REPLACEMENTS to recover.
 			 * @see {@link https://encoding.spec.whatwg.org/index-windows-1252.txt | windows-1252 index}
 			 */
-			if (byte < 0xa0 && char.charCodeAt(0) === byte) {
+			if (unassignedBytes.has(byte)) {
 				continue;
 			}
-			/**
-			 * The two decoders only disagree for bytes 0x80-0x9F, so for 74 of the
-			 * 123 characters both calls write the same key with the same value and
-			 * the map settles on 172 entries rather than 246.
-			 */
-			expectedTable.set(mojibakeOf(char), char);
-			expectedTable.set(isoMojibakeOf(char), char);
+
+			const originalChar = windows1252.decode(Buffer.from([byte]));
+
+			// Add the mojibake produced by reading the UTF-8 bytes as Windows-1252 and ISO-8859-1
+			expectedReplacements.set(mojibakeOf(originalChar), originalChar);
+			expectedReplacements.set(isoMojibakeOf(originalChar), originalChar);
 		}
+
 		t.assert.deepStrictEqual(
 			new Map(Object.entries(REPLACEMENTS)),
-			expectedTable
+			expectedReplacements
 		);
 	});
 

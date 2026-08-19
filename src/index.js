@@ -1,9 +1,9 @@
 "use strict";
 
 /**
- * @description Mojibake sequences and the UTF-8 characters they stand for.
- * ISO-8859-1 (Latin-1) and Windows-1252 (CP1252) disagree on bytes 0x80-0x9F,
- * so both readings of every affected character are listed.
+ * @description Lookup table of mojibake sequences and their original Unicode
+ * characters. Includes sequences produced when UTF-8 bytes are incorrectly
+ * decoded as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252).
  * @see {@link https://www.i18nqa.com/debug/utf8-debug.html | UTF-8 Encoding Debugging Chart}
  * @see {@link https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1252.TXT | cp1252 to Unicode table}
  * @see {@link https://www.unicode.org/Public/MAPPINGS/ISO8859/8859-1.TXT | ISO/IEC 8859-1:1998 to Unicode}
@@ -191,7 +191,7 @@ const REPLACEMENTS = Object.freeze({
 
 // Cache immutable regex as they are expensive to create and garbage collect
 const MOJIBAKE_LEAD_PATTERN = /[ãâåæë]/iu;
-// Sort longest-first so a shorter key cannot shadow a longer one in alternation
+// Sort longest-first to prevent a shorter alternative from matching first
 // eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
 const MATCH_REG = new RegExp(
 	Object.keys(REPLACEMENTS)
@@ -202,10 +202,11 @@ const MATCH_REG = new RegExp(
 
 /**
  * @author Frazer Smith
- * @description Fixes ISO-8859-1 (Latin-1) and Windows-1252 (CP1252) mojibake in UTF-8 strings.
- * @param {string} str - The string to be fixed.
+ * @description Fixes mojibake caused by decoding UTF-8 bytes
+ * as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252).
+ * @param {string} str - The string to fix.
  * @returns {string} The fixed string.
- * @throws {TypeError} If the argument is not a string.
+ * @throws {TypeError} If `str` is not a string.
  */
 function fixLatin1ToUtf8(str) {
 	if (typeof str !== "string") {
