@@ -11,11 +11,12 @@
 
 # Overview
 
-Decoding UTF-8 bytes as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) produces mojibake, where `’` becomes `â€™`.
-Once stored, no charset setting undoes it.
+Decoding UTF-8 bytes as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) leaves ASCII intact but turns every non-ASCII character into mojibake.
+Once those characters are re-encoded as UTF-8, no charset setting can recover the original.
 
-The two encodings garble bytes `0x80`-`0x9F` differently; this module repairs both.
-Windows-1252 is widely treated as an extension of Latin-1, so is covered by this module.
+This module restores the original characters.
+ISO-8859-1 reserves bytes `0x80`-`0x9F` for C1 control codes whilst Windows-1252 uses them for additional characters.
+Both encodings are handled.
 
 ## Installation
 
@@ -34,12 +35,11 @@ Please refer to the [JSDoc comments in the source code](./src/index.js) or the [
 
 const fixLatin1ToUtf8 = require("fix-latin1-to-utf8");
 
-const latin1String =
-	"This is a UTF-8 string that was converted from Latin-1, so cafÃ© became mojibake.";
-const utf8String = fixLatin1ToUtf8(latin1String);
+const mojibakeString = "The cafÃ©â€™s sign was garbled.";
+const fixedString = fixLatin1ToUtf8(mojibakeString);
 
-console.log(utf8String);
-// This is a UTF-8 string that was converted from Latin-1, so café became mojibake.
+console.log(fixedString);
+// The café’s sign was garbled.
 ```
 
 ## Contributing
