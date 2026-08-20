@@ -1,8 +1,8 @@
 "use strict";
 
 /**
- * @description Mojibake sequences and their original Unicode
- * characters. Includes sequences produced when UTF-8 bytes are incorrectly
+ * @description Mojibake sequences and their original Unicode characters.
+ * Includes sequences produced when UTF-8 bytes are incorrectly
  * decoded as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252).
  * @see {@link https://www.i18nqa.com/debug/utf8-debug.html | UTF-8 Encoding Debugging Chart}
  * @see {@link https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1252.TXT | cp1252 to Unicode table}
