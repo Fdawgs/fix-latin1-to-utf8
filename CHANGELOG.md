@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v3.0.1...v3.0.2) (2026-08-20)
+
+
+### Documentation
+
+* **readme:** improve overview readability ([#198](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/198)) ([58ea9c7](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/58ea9c7cdf2c79ba127c1be76eb836965bef6936))
+
+
+### Miscellaneous
+
+* simplify descriptions and test structures ([#200](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/200)) ([a709300](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/a709300ed169a220f632940034aa9fb7c424cd97))
+
 ## [3.0.1](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v3.0.0...v3.0.1) (2026-08-18)
 
 
