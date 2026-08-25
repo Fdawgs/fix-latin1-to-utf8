@@ -14,7 +14,7 @@ const windows1252 = new TextDecoder("windows-1252");
  * @param {string} char - Single character to corrupt.
  * @returns {string} The mojibake sequence.
  */
-function mojibakeOf(char) {
+function win1252MojibakeOf(char) {
 	return windows1252.decode(Buffer.from(char, "utf8"));
 }
 
@@ -62,7 +62,10 @@ describe("fixLatin1ToUtf8 function", () => {
 			const originalChar = windows1252.decode(Buffer.from([byte]));
 
 			// Add the mojibake produced by reading the UTF-8 bytes as Windows-1252 and ISO-8859-1
-			expectedReplacements.set(mojibakeOf(originalChar), originalChar);
+			expectedReplacements.set(
+				win1252MojibakeOf(originalChar),
+				originalChar
+			);
 			expectedReplacements.set(isoMojibakeOf(originalChar), originalChar);
 		}
 
@@ -75,6 +78,42 @@ describe("fixLatin1ToUtf8 function", () => {
 	it("Replaces multiple characters", (/** @type {TestContext} */ t) => {
 		t.plan(1);
 		t.assert.strictEqual(fixLatin1ToUtf8("â€šÆ’â€žâ€¦â€\u00A0"), "‚ƒ„…†");
+	});
+
+	it("Is idempotent for adjacent mojibake sequences", (/** @type {TestContext} */ t) => {
+		t.plan(1);
+		// Adjacent replacements can combine into new mojibake, so test every pair
+		const notIdempotent = [];
+		for (let i = 0; i < entriesLength; i += 1) {
+			for (let j = 0; j < entriesLength; j += 1) {
+				const fixed = fixLatin1ToUtf8(entries[i][0] + entries[j][0]);
+				if (fixLatin1ToUtf8(fixed) !== fixed) {
+					notIdempotent.push(fixed);
+				}
+			}
+		}
+
+		t.assert.deepStrictEqual(notIdempotent, []);
+	});
+
+	it("Fixes double-encoded mojibake in a single call", (/** @type {TestContext} */ t) => {
+		t.plan(4);
+		const windows1252Double = win1252MojibakeOf(win1252MojibakeOf("é"));
+		t.assert.strictEqual(windows1252Double, "ÃƒÂ©");
+		t.assert.strictEqual(fixLatin1ToUtf8(windows1252Double), "é");
+
+		const isoDouble = isoMojibakeOf(isoMojibakeOf("é"));
+		t.assert.strictEqual(isoDouble, "Ã\u0083Â©");
+		t.assert.strictEqual(fixLatin1ToUtf8(isoDouble), "é");
+	});
+
+	it("Fixes triple-encoded mojibake in a single call", (/** @type {TestContext} */ t) => {
+		t.plan(2);
+		const windows1252Triple = win1252MojibakeOf(
+			win1252MojibakeOf(win1252MojibakeOf("é"))
+		);
+		t.assert.strictEqual(windows1252Triple, "ÃƒÆ’Ã‚Â©");
+		t.assert.strictEqual(fixLatin1ToUtf8(windows1252Triple), "é");
 	});
 
 	it("Does not alter a string without mojibake", (/** @type {TestContext} */ t) => {

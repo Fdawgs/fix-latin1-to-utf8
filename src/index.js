@@ -190,7 +190,7 @@ const REPLACEMENTS = Object.freeze({
 });
 
 // Cache immutable regex as they are expensive to create and garbage collect
-const MOJIBAKE_LEAD_PATTERN = /[ãâåæë]/iu;
+const MOJIBAKE_LEAD_REG = /[âÂÃÅÆË]/u;
 // Sort longest-first to prevent a shorter alternative from matching first
 // eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
 const MATCH_REG = new RegExp(
@@ -203,9 +203,11 @@ const MATCH_REG = new RegExp(
 /**
  * @author Frazer Smith
  * @description Fixes mojibake caused by decoding UTF-8 bytes
- * as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252).
+ * as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252), including
+ * multiply encoded text.
  * @param {string} str - The string to fix.
- * @returns {string} The fixed string.
+ * @returns {string} The fixed string or the original string
+ * if no known mojibake was found.
  * @throws {TypeError} If `str` is not a string.
  */
 function fixLatin1ToUtf8(str) {
@@ -214,11 +216,19 @@ function fixLatin1ToUtf8(str) {
 	}
 
 	// Early return if no matches
-	if (!MOJIBAKE_LEAD_PATTERN.test(str)) {
+	if (!MOJIBAKE_LEAD_REG.test(str)) {
 		return str;
 	}
 
-	return str.replace(MATCH_REG, (match) => REPLACEMENTS[match]);
+	// Repeat until no known mojibake remains
+	let result = str;
+	let previous;
+	do {
+		previous = result;
+		result = previous.replace(MATCH_REG, (match) => REPLACEMENTS[match]);
+	} while (result !== previous && MOJIBAKE_LEAD_REG.test(result));
+
+	return result;
 }
 
 module.exports = fixLatin1ToUtf8; // CommonJS export
