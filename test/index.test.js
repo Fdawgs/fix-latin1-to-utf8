@@ -44,7 +44,6 @@ describe("fixLatin1ToUtf8 function", () => {
 	}
 
 	it("REPLACEMENTS contains all expected Latin-1 and Windows-1252 mojibake mappings", (/** @type {TestContext} */ t) => {
-		t.plan(1);
 		const expectedReplacements = new Map();
 		const unassignedBytes = new Set([0x81, 0x8d, 0x8f, 0x90, 0x9d]);
 
@@ -69,6 +68,7 @@ describe("fixLatin1ToUtf8 function", () => {
 			expectedReplacements.set(isoMojibakeOf(originalChar), originalChar);
 		}
 
+		t.plan(1);
 		t.assert.deepStrictEqual(
 			new Map(Object.entries(REPLACEMENTS)),
 			expectedReplacements
@@ -81,7 +81,6 @@ describe("fixLatin1ToUtf8 function", () => {
 	});
 
 	it("Is idempotent for adjacent mojibake sequences", (/** @type {TestContext} */ t) => {
-		t.plan(1);
 		// Adjacent replacements can combine into new mojibake, so test every pair
 		const notIdempotent = [];
 		for (let i = 0; i < entriesLength; i += 1) {
@@ -93,32 +92,35 @@ describe("fixLatin1ToUtf8 function", () => {
 			}
 		}
 
+		t.plan(1);
 		t.assert.deepStrictEqual(notIdempotent, []);
 	});
 
 	it("Fixes double-encoded mojibake in a single call", (/** @type {TestContext} */ t) => {
-		t.plan(4);
-		const windows1252Double = win1252MojibakeOf(win1252MojibakeOf("é"));
-		t.assert.strictEqual(windows1252Double, "ÃƒÂ©");
-		t.assert.strictEqual(fixLatin1ToUtf8(windows1252Double), "é");
-
 		const isoDouble = isoMojibakeOf(isoMojibakeOf("é"));
+		const windows1252Double = win1252MojibakeOf(win1252MojibakeOf("é"));
+
+		t.plan(4);
 		t.assert.strictEqual(isoDouble, "Ã\u0083Â©");
 		t.assert.strictEqual(fixLatin1ToUtf8(isoDouble), "é");
+		t.assert.strictEqual(windows1252Double, "ÃƒÂ©");
+		t.assert.strictEqual(fixLatin1ToUtf8(windows1252Double), "é");
 	});
 
 	it("Fixes triple-encoded mojibake in a single call", (/** @type {TestContext} */ t) => {
-		t.plan(2);
 		const windows1252Triple = win1252MojibakeOf(
 			win1252MojibakeOf(win1252MojibakeOf("é"))
 		);
+
+		t.plan(2);
 		t.assert.strictEqual(windows1252Triple, "ÃƒÆ’Ã‚Â©");
 		t.assert.strictEqual(fixLatin1ToUtf8(windows1252Triple), "é");
 	});
 
 	it("Does not alter a string without mojibake", (/** @type {TestContext} */ t) => {
-		t.plan(1);
 		const str = "Hello, world!";
+
+		t.plan(1);
 		t.assert.strictEqual(fixLatin1ToUtf8(str), str);
 	});
 
