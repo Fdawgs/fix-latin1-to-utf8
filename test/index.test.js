@@ -117,6 +117,18 @@ describe("fixLatin1ToUtf8 function", () => {
 		t.assert.strictEqual(fixLatin1ToUtf8(windows1252Triple), "é");
 	});
 
+	it("Fixes deeply encoded mojibake in a single call", (/** @type {TestContext} */ t) => {
+		const deeplyEncoded = `Ã${"\u0083".repeat(10_000)}©`;
+		let deeplyEncodedEuro = "€";
+		for (let depth = 0; depth < 7; depth += 1) {
+			deeplyEncodedEuro = win1252MojibakeOf(deeplyEncodedEuro);
+		}
+
+		t.plan(2);
+		t.assert.strictEqual(fixLatin1ToUtf8(deeplyEncoded), "é");
+		t.assert.strictEqual(fixLatin1ToUtf8(deeplyEncodedEuro), "€");
+	});
+
 	it("Does not alter a string without mojibake", (/** @type {TestContext} */ t) => {
 		const str = "Hello, world!";
 

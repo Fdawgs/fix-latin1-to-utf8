@@ -202,6 +202,37 @@ const MATCH_REG = new RegExp(
 
 /**
  * @author Frazer Smith
+ * @description Reduces deeply nested mojibake in one left-to-right pass,
+ * avoiding repeated full-string scans after the regex fast path.
+ * @param {string} str - The string to reduce.
+ * @returns {string} The reduced string.
+ */
+function reduceMojibake(str) {
+	/** @type {string[]} */
+	const output = [];
+	for (let index = 0; index < str.length; index += 1) {
+		output.push(str[index]);
+
+		let matchLength = Math.min(3, output.length);
+		while (matchLength > 1) {
+			const replacement =
+				REPLACEMENTS[output.slice(-matchLength).join("")];
+			if (replacement === undefined) {
+				matchLength -= 1;
+				continue;
+			}
+
+			output.length -= matchLength;
+			output.push(replacement);
+			matchLength = Math.min(3, output.length);
+		}
+	}
+
+	return output.join("");
+}
+
+/**
+ * @author Frazer Smith
  * @description Fixes mojibake caused by decoding UTF-8 bytes
  * as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252), including
  * multiply encoded text.
@@ -220,15 +251,17 @@ function fixLatin1ToUtf8(str) {
 		return str;
 	}
 
-	// Repeat until no known mojibake remains
+	// Fast path for common single, double and triple encoding
 	let result = str;
-	let previous;
-	do {
-		previous = result;
+	for (let pass = 0; pass < 3; pass += 1) {
+		const previous = result;
 		result = previous.replace(MATCH_REG, (match) => REPLACEMENTS[match]);
-	} while (result !== previous && MOJIBAKE_LEAD_REG.test(result));
+		if (result === previous || !MOJIBAKE_LEAD_REG.test(result)) {
+			return result;
+		}
+	}
 
-	return result;
+	return reduceMojibake(result);
 }
 
 module.exports = fixLatin1ToUtf8; // CommonJS export
