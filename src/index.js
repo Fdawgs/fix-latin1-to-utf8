@@ -192,13 +192,43 @@ const REPLACEMENTS = Object.freeze({
 // Cache immutable regex as they are expensive to create and garbage collect
 const MOJIBAKE_LEAD_REG = /[âÂÃÅÆË]/u;
 // Sort longest-first to prevent a shorter alternative from matching first
-// eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
-const MATCH_REG = new RegExp(
-	Object.keys(REPLACEMENTS)
-		.sort((a, b) => b.length - a.length)
-		.join("|"),
-	"gu"
+const REPLACEMENT_KEYS = Object.keys(REPLACEMENTS).sort(
+	(a, b) => b.length - a.length
 );
+const MAX_REPLACEMENT_LENGTH = REPLACEMENT_KEYS[0].length;
+// eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
+const MATCH_REG = new RegExp(REPLACEMENT_KEYS.join("|"), "gu");
+
+/**
+ * @author Frazer Smith
+ * @description Reduces deeply nested mojibake in one left-to-right pass,
+ * avoiding repeated full-string scans after the regex fast path.
+ * @param {string} str - The string to reduce.
+ * @returns {string} The reduced string.
+ */
+function reduceMojibake(str) {
+	/** @type {string[]} */
+	const output = [];
+	for (let index = 0; index < str.length; index += 1) {
+		output.push(str[index]);
+
+		let matchLength = Math.min(MAX_REPLACEMENT_LENGTH, output.length);
+		while (matchLength > 1) {
+			const replacement =
+				REPLACEMENTS[output.slice(-matchLength).join("")];
+			if (replacement === undefined) {
+				matchLength -= 1;
+				continue;
+			}
+
+			output.length -= matchLength;
+			output.push(replacement);
+			matchLength = Math.min(MAX_REPLACEMENT_LENGTH, output.length);
+		}
+	}
+
+	return output.join("");
+}
 
 /**
  * @author Frazer Smith
@@ -220,15 +250,17 @@ function fixLatin1ToUtf8(str) {
 		return str;
 	}
 
-	// Repeat until no known mojibake remains
+	// Fast path for common single, double and triple encoding
 	let result = str;
-	let previous;
-	do {
-		previous = result;
+	for (let pass = 0; pass < 3; pass += 1) {
+		const previous = result;
 		result = previous.replace(MATCH_REG, (match) => REPLACEMENTS[match]);
-	} while (result !== previous && MOJIBAKE_LEAD_REG.test(result));
+		if (result === previous || !MOJIBAKE_LEAD_REG.test(result)) {
+			return result;
+		}
+	}
 
-	return result;
+	return reduceMojibake(result);
 }
 
 module.exports = fixLatin1ToUtf8; // CommonJS export
