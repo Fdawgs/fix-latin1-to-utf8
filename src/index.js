@@ -192,13 +192,12 @@ const REPLACEMENTS = Object.freeze({
 // Cache immutable regex as they are expensive to create and garbage collect
 const MOJIBAKE_LEAD_REG = /[âÂÃÅÆË]/u;
 // Sort longest-first to prevent a shorter alternative from matching first
-// eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
-const MATCH_REG = new RegExp(
-	Object.keys(REPLACEMENTS)
-		.sort((a, b) => b.length - a.length)
-		.join("|"),
-	"gu"
+const REPLACEMENT_KEYS = Object.keys(REPLACEMENTS).sort(
+	(a, b) => b.length - a.length
 );
+const MAX_REPLACEMENT_LENGTH = REPLACEMENT_KEYS[0].length;
+// eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
+const MATCH_REG = new RegExp(REPLACEMENT_KEYS.join("|"), "gu");
 
 /**
  * @author Frazer Smith
@@ -213,7 +212,7 @@ function reduceMojibake(str) {
 	for (let index = 0; index < str.length; index += 1) {
 		output.push(str[index]);
 
-		let matchLength = Math.min(3, output.length);
+		let matchLength = Math.min(MAX_REPLACEMENT_LENGTH, output.length);
 		while (matchLength > 1) {
 			const replacement =
 				REPLACEMENTS[output.slice(-matchLength).join("")];
@@ -224,7 +223,7 @@ function reduceMojibake(str) {
 
 			output.length -= matchLength;
 			output.push(replacement);
-			matchLength = Math.min(3, output.length);
+			matchLength = Math.min(MAX_REPLACEMENT_LENGTH, output.length);
 		}
 	}
 
