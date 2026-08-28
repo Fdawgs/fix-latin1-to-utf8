@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v3.0.2...v3.0.3) (2026-08-28)
+
+
+### Bug fixes
+
+* **index:** avoid quadratic processing of deeply encoded text ([#204](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/204)) ([a89de9d](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/a89de9d32f11e07761c0186d57eab410e55e7325))
+
+
+### Tests
+
+* **index:** group plan check with tests ([#202](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/202)) ([ecb6645](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/ecb66454d598181b1872d9dfee0b7e5e2fe23513))
+
 ## [3.0.2](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v3.0.1...v3.0.2) (2026-08-25)
 
 
