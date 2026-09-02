@@ -196,6 +196,8 @@ const REPLACEMENT_KEYS = Object.keys(REPLACEMENTS).sort(
 	(a, b) => b.length - a.length
 );
 const MAX_REPLACEMENT_LENGTH = REPLACEMENT_KEYS[0].length;
+// First character of every key; a candidate that starts with anything else cannot match
+const LEAD_CHARS = new Set(REPLACEMENT_KEYS.map((key) => key[0]));
 // eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
 const MATCH_REG = new RegExp(REPLACEMENT_KEYS.join("|"), "gu");
 
@@ -214,6 +216,12 @@ function reduceMojibake(str) {
 
 		let matchLength = Math.min(MAX_REPLACEMENT_LENGTH, output.length);
 		while (matchLength > 1) {
+			// Skip the slice and join allocation for candidates that cannot be a key
+			if (!LEAD_CHARS.has(output[output.length - matchLength])) {
+				matchLength -= 1;
+				continue;
+			}
+
 			const replacement =
 				REPLACEMENTS[output.slice(-matchLength).join("")];
 			if (replacement === undefined) {

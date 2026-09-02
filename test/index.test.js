@@ -129,6 +129,20 @@ describe("fixLatin1ToUtf8 function", () => {
 		t.assert.strictEqual(fixLatin1ToUtf8(deeplyEncodedEuro), "€");
 	});
 
+	it("Fixes text after a prefix that outlasts the regex passes", (/** @type {TestContext} */ t) => {
+		// Four continuation bytes need four reductions, so the whole string reaches reduceMojibake
+		const prefix = `Ã${"\u0083".repeat(4)}`;
+		const body =
+			"cafÃ© crÃ¨me bâtiment São Paulo Ångström Æsir Ëlan ".repeat(50);
+
+		t.plan(2);
+		t.assert.strictEqual(fixLatin1ToUtf8(prefix), "Ã");
+		t.assert.strictEqual(
+			fixLatin1ToUtf8(prefix + body),
+			`Ã${fixLatin1ToUtf8(body)}`
+		);
+	});
+
 	it("Does not alter a string without mojibake", (/** @type {TestContext} */ t) => {
 		const str = "Hello, world!";
 
