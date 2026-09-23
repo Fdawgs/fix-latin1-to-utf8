@@ -1,205 +1,75 @@
 "use strict";
 
 /**
- * @description Mojibake sequences and their original Unicode characters.
- * Includes sequences produced when UTF-8 bytes are incorrectly
- * decoded as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252).
- * @see {@link https://www.i18nqa.com/debug/utf8-debug.html | UTF-8 Encoding Debugging Chart}
+ * @description Windows-1252 (CP1252) characters for bytes 0x80-0x9F, in byte order.
+ * Windows-1252 leaves bytes 0x81, 0x8D, 0x8F, 0x90 and 0x9D undefined,
+ * so these decode to C1 control characters, the same as ISO-8859-1 (Latin-1).
  * @see {@link https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1252.TXT | cp1252 to Unicode table}
- * @see {@link https://www.unicode.org/Public/MAPPINGS/ISO8859/8859-1.TXT | ISO/IEC 8859-1:1998 to Unicode}
- * @type {Readonly<Record<string, string>>}
  */
-// @ts-expect-error -- TS cannot infer that __proto__ is a special property and not part of the record type
-const REPLACEMENTS = Object.freeze({
-	__proto__: null,
-	// Mojibake: original
-	// Windows-1252 mojibake
-	"â‚¬": "€",
-	"â€š": "‚",
-	"Æ’": "ƒ",
-	"â€ž": "„",
-	"â€¦": "…",
-	"â€\u00A0": "†",
-	"â€¡": "‡",
-	"Ë†": "ˆ",
-	"â€°": "‰",
-	"Å\u00A0": "Š",
-	"â€¹": "‹",
-	"Å’": "Œ",
-	"Å½": "Ž",
-	"â€˜": "‘",
-	"â€™": "’",
-	"â€œ": "“",
-	"â€\u009D": "”",
-	"â€¢": "•",
-	"â€“": "–",
-	"â€”": "—",
-	Ëœ: "˜",
-	"â„¢": "™",
-	"Å¡": "š",
-	"â€º": "›",
-	"Å“": "œ",
-	"Å¾": "ž",
-	"Å¸": "Ÿ",
-	"Â\u00A0": "\u00A0",
-	"Â¡": "¡",
-	"Â¢": "¢",
-	"Â£": "£",
-	"Â¤": "¤",
-	"Â¥": "¥",
-	"Â¦": "¦",
-	"Â§": "§",
-	"Â¨": "¨",
-	"Â©": "©",
-	Âª: "ª",
-	"Â«": "«",
-	"Â¬": "¬",
-	"Â\u00AD": "\u00AD",
-	"Â®": "®",
-	"Â¯": "¯",
-	"Â°": "°",
-	"Â±": "±",
-	"Â²": "²",
-	"Â³": "³",
-	"Â´": "´",
-	Âµ: "µ",
-	"Â¶": "¶",
-	"Â·": "·",
-	"Â¸": "¸",
-	"Â¹": "¹",
-	Âº: "º",
-	"Â»": "»",
-	"Â¼": "¼",
-	"Â½": "½",
-	"Â¾": "¾",
-	"Â¿": "¿",
-	"Ã€": "À",
-	"Ã\u0081": "Á",
-	"Ã‚": "Â",
-	Ãƒ: "Ã",
-	"Ã„": "Ä",
-	"Ã…": "Å",
-	"Ã†": "Æ",
-	"Ã‡": "Ç",
-	Ãˆ: "È",
-	"Ã‰": "É",
-	ÃŠ: "Ê",
-	"Ã‹": "Ë",
-	ÃŒ: "Ì",
-	"Ã\u008D": "Í",
-	ÃŽ: "Î",
-	"Ã\u008F": "Ï",
-	"Ã\u0090": "Ð",
-	"Ã‘": "Ñ",
-	"Ã’": "Ò",
-	"Ã“": "Ó",
-	"Ã”": "Ô",
-	"Ã•": "Õ",
-	"Ã–": "Ö",
-	"Ã—": "×",
-	"Ã˜": "Ø",
-	"Ã™": "Ù",
-	Ãš: "Ú",
-	"Ã›": "Û",
-	Ãœ: "Ü",
-	"Ã\u009D": "Ý",
-	Ãž: "Þ",
-	ÃŸ: "ß",
-	"Ã\u00A0": "à",
-	"Ã¡": "á",
-	"Ã¢": "â",
-	"Ã£": "ã",
-	"Ã¤": "ä",
-	"Ã¥": "å",
-	"Ã¦": "æ",
-	"Ã§": "ç",
-	"Ã¨": "è",
-	"Ã©": "é",
-	Ãª: "ê",
-	"Ã«": "ë",
-	"Ã¬": "ì",
-	"Ã\u00AD": "í",
-	"Ã®": "î",
-	"Ã¯": "ï",
-	"Ã°": "ð",
-	"Ã±": "ñ",
-	"Ã²": "ò",
-	"Ã³": "ó",
-	"Ã´": "ô",
-	Ãµ: "õ",
-	"Ã¶": "ö",
-	"Ã·": "÷",
-	"Ã¸": "ø",
-	"Ã¹": "ù",
-	Ãº: "ú",
-	"Ã»": "û",
-	"Ã¼": "ü",
-	"Ã½": "ý",
-	"Ã¾": "þ",
-	"Ã¿": "ÿ",
-	// ISO-8859-1 mojibake
-	"â\u0082¬": "€",
-	"â\u0080\u009A": "‚",
-	"Æ\u0092": "ƒ",
-	"â\u0080\u009E": "„",
-	"â\u0080¦": "…",
-	"â\u0080\u00A0": "†",
-	"â\u0080¡": "‡",
-	"Ë\u0086": "ˆ",
-	"â\u0080°": "‰",
-	"â\u0080¹": "‹",
-	"Å\u0092": "Œ",
-	"â\u0080\u0098": "‘",
-	"â\u0080\u0099": "’",
-	"â\u0080\u009C": "“",
-	"â\u0080\u009D": "”",
-	"â\u0080¢": "•",
-	"â\u0080\u0093": "–",
-	"â\u0080\u0094": "—",
-	"Ë\u009C": "˜",
-	"â\u0084¢": "™",
-	"â\u0080º": "›",
-	"Å\u0093": "œ",
-	"Ã\u0080": "À",
-	"Ã\u0082": "Â",
-	"Ã\u0083": "Ã",
-	"Ã\u0084": "Ä",
-	"Ã\u0085": "Å",
-	"Ã\u0086": "Æ",
-	"Ã\u0087": "Ç",
-	"Ã\u0088": "È",
-	"Ã\u0089": "É",
-	"Ã\u008A": "Ê",
-	"Ã\u008B": "Ë",
-	"Ã\u008C": "Ì",
-	"Ã\u008E": "Î",
-	"Ã\u0091": "Ñ",
-	"Ã\u0092": "Ò",
-	"Ã\u0093": "Ó",
-	"Ã\u0094": "Ô",
-	"Ã\u0095": "Õ",
-	"Ã\u0096": "Ö",
-	"Ã\u0097": "×",
-	"Ã\u0098": "Ø",
-	"Ã\u0099": "Ù",
-	"Ã\u009A": "Ú",
-	"Ã\u009B": "Û",
-	"Ã\u009C": "Ü",
-	"Ã\u009E": "Þ",
-	"Ã\u009F": "ß",
-});
+const CP1252_80_9F =
+	"\u20AC\u0081\u201A\u0192\u201E\u2026\u2020\u2021\u02C6\u2030\u0160\u2039\u0152\u008D\u017D\u008F" +
+	"\u0090\u2018\u2019\u201C\u201D\u2022\u2013\u2014\u02DC\u2122\u0161\u203A\u0153\u009D\u017E\u0178";
+
+/**
+ * @description Mis-decoded characters and their original byte values.
+ * @see {@link https://www.unicode.org/Public/MAPPINGS/ISO8859/8859-1.TXT | ISO/IEC 8859-1:1998 to Unicode}
+ * @type {Map<string, number>}
+ */
+const BYTES = new Map();
+// ISO-8859-1
+for (let byte = 0x80; byte <= 0xff; byte += 1) {
+	BYTES.set(String.fromCharCode(byte), byte);
+}
+// Windows-1252
+const cp1252Length = CP1252_80_9F.length;
+for (let i = 0; i < cp1252Length; i += 1) {
+	BYTES.set(CP1252_80_9F[i], 0x80 + i);
+}
 
 // Cache immutable regex as they are expensive to create and garbage collect
-const MOJIBAKE_LEAD_REG = /[âÂÃÅÆË]/u;
-// Sort longest-first to prevent a shorter alternative from matching first
-const REPLACEMENT_KEYS = Object.keys(REPLACEMENTS).sort(
-	(a, b) => b.length - a.length
-);
-const MAX_REPLACEMENT_LENGTH = REPLACEMENT_KEYS[0].length;
-// First character of every key; a candidate that starts with anything else cannot match
-const LEAD_CHARS = new Set(REPLACEMENT_KEYS.map((key) => key[0]));
+// UTF-8 lead bytes (0xC2-0xF4), as decoded by either encoding, which all mojibake starts with
+const MOJIBAKE_LEAD_REG = /[\u00C2-\u00F4]/u;
+// UTF-8 continuation bytes (0x80-0xBF), as decoded by either encoding
+const TRAIL = String.raw`[\u0080-\u00BF\u0152\u0153\u0160\u0161\u0178\u017D\u017E\u0192\u02C6\u02DC\u2013\u2014\u2018-\u201A\u201C-\u201E\u2020-\u2022\u2026\u2030\u2039\u203A\u20AC\u2122]`;
+// Mojibake of one UTF-8 character: a lead byte (0xC2-0xF4) followed by the number of continuation bytes it expects
+const SEQUENCE = String.raw`[\u00C2-\u00DF]${TRAIL}|[\u00E0-\u00EF]${TRAIL}{2}|[\u00F0-\u00F4]${TRAIL}{3}`;
+// Finds every sequence in a string for the fast path
 // eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
-const MATCH_REG = new RegExp(REPLACEMENT_KEYS.join("|"), "gu");
+const MATCH_REG = new RegExp(SEQUENCE, "gu");
+// Checks a candidate in the fallback path is exactly one sequence
+// eslint-disable-next-line security/detect-non-literal-regexp -- Static regex, no user input
+const SEQUENCE_REG = new RegExp(`^(?:${SEQUENCE})$`, "u");
+// C1 control characters do not appear in real text, so sequences containing them are always mojibake
+const C1_REG = /[\u0080-\u009F]/u;
+// Sequences without a C1 control character could be real text, such as "JOSÉ’S", so are only decoded to characters mojibake commonly stands for
+const LIKELY_REG =
+	// eslint-disable-next-line security/detect-unsafe-regex -- False positive, safe-regex does not support the u flag
+	/[\u0080-\u017F\u0192\u02C6\u02DC\u0370-\u03FF\u1E00-\u1EFF\u2000-\u2BFF\uE000-\uF8FF\uFB00-\uFFFF\u{10000}-\u{10FFFF}]/u;
+
+// Longest UTF-8 sequence is a lead byte and three continuation bytes
+const MAX_MATCH_LENGTH = 4;
+
+const DECODER = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true });
+
+/**
+ * @author Frazer Smith
+ * @description Decodes a mojibake sequence back to the character it stands for.
+ * @param {string} match - A lead character followed by its continuation characters.
+ * @returns {string} The decoded character, or the original sequence if it is not mojibake.
+ */
+function decode(match) {
+	let char;
+	try {
+		char = DECODER.decode(
+			Uint8Array.from(match, (c) => /** @type {number} */ (BYTES.get(c)))
+		);
+	} catch {
+		// Not valid UTF-8, such as an overlong or surrogate sequence
+		return match;
+	}
+
+	return C1_REG.test(match) || LIKELY_REG.test(char) ? char : match;
+}
 
 /**
  * @author Frazer Smith
@@ -211,27 +81,31 @@ const MATCH_REG = new RegExp(REPLACEMENT_KEYS.join("|"), "gu");
 function reduceMojibake(str) {
 	/** @type {string[]} */
 	const output = [];
-	for (let index = 0; index < str.length; index += 1) {
+
+	const strLength = str.length;
+	for (let index = 0; index < strLength; index += 1) {
 		output.push(str[index]);
 
-		let matchLength = Math.min(MAX_REPLACEMENT_LENGTH, output.length);
+		let matchLength = Math.min(MAX_MATCH_LENGTH, output.length);
 		while (matchLength > 1) {
-			// Skip the slice and join allocation for candidates that cannot be a key
-			if (!LEAD_CHARS.has(output[output.length - matchLength])) {
+			// Skip the slice and join allocation for candidates that cannot be a sequence
+			if (!MOJIBAKE_LEAD_REG.test(output[output.length - matchLength])) {
 				matchLength -= 1;
 				continue;
 			}
 
-			const replacement =
-				REPLACEMENTS[output.slice(-matchLength).join("")];
-			if (replacement === undefined) {
+			const candidate = output.slice(-matchLength).join("");
+			const replacement = SEQUENCE_REG.test(candidate)
+				? decode(candidate)
+				: candidate;
+			if (replacement === candidate) {
 				matchLength -= 1;
 				continue;
 			}
 
 			output.length -= matchLength;
 			output.push(replacement);
-			matchLength = Math.min(MAX_REPLACEMENT_LENGTH, output.length);
+			matchLength = Math.min(MAX_MATCH_LENGTH, output.length);
 		}
 	}
 
@@ -262,7 +136,7 @@ function fixLatin1ToUtf8(str) {
 	let result = str;
 	for (let pass = 0; pass < 3; pass += 1) {
 		const previous = result;
-		result = previous.replace(MATCH_REG, (match) => REPLACEMENTS[match]);
+		result = previous.replace(MATCH_REG, decode);
 		if (result === previous || !MOJIBAKE_LEAD_REG.test(result)) {
 			return result;
 		}
@@ -274,4 +148,3 @@ function fixLatin1ToUtf8(str) {
 module.exports = fixLatin1ToUtf8; // CommonJS export
 module.exports.default = fixLatin1ToUtf8; // ESM default export
 module.exports.fixLatin1ToUtf8 = fixLatin1ToUtf8; // TypeScript and named export
-module.exports.REPLACEMENTS = REPLACEMENTS;

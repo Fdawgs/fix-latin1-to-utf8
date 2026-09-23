@@ -11,9 +11,9 @@
 
 # Overview
 
-Decoding UTF-8 bytes as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) leaves ASCII intact but turns every non-ASCII character into mojibake.
+Decoding UTF-8 bytes as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) leaves ASCII intact but turns every non-ASCII character into mojibake, where `’` becomes `â€™`.
 
-This module restores the original characters for both character encodings.
+The `fix-latin1-to-utf8` module restores the original characters for both character encodings, including text garbled more than once.
 
 ## Installation
 
@@ -45,10 +45,6 @@ Contributions are welcome, and any help is greatly appreciated!
 
 See [the contributing guide](https://github.com/Fdawgs/.github/blob/main/CONTRIBUTING.md) for details on how to get started.
 Please adhere to this project's [Code of Conduct](https://github.com/Fdawgs/.github/blob/main/CODE_OF_CONDUCT.md) when contributing.
-
-## Acknowledgements
-
-- **Tex Texin** - Creator of the [UTF-8 Encoding Debugging Chart](https://www.i18nqa.com/debug/utf8-debug.html)
 
 ## License
 
