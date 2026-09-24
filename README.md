@@ -14,6 +14,7 @@
 Decoding UTF-8 bytes as ISO-8859-1 (Latin-1) or Windows-1252 (CP1252) leaves ASCII intact but turns every non-ASCII character into mojibake, where `’` becomes `â€™`.
 
 The `fix-latin1-to-utf8` module restores the original characters for both character encodings, including text garbled more than once.
+Text resembling mojibake is left unchanged, so some Cyrillic and Chinese text may not be restored.
 
 ## Installation
 
