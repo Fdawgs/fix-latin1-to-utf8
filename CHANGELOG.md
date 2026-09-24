@@ -1,5 +1,34 @@
 # Changelog
 
+## [4.0.0](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v3.0.3...v4.0.0) (2026-09-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **index:** `REPLACEMENTS` export has been removed
+
+### Bug fixes
+
+* **index:** skip lookups that cannot match in the fallback path ([#207](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/207)) ([bc84bcd](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/bc84bcd8dce36f80e9f9222ee61a053b8990e881))
+
+
+### Continuous integration
+
+* **deps:** bump the github-owned group with 2 updates ([#205](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/205)) ([12d1fc1](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/12d1fc1c8d10a9b3eac7c564b1475410ed7b6a92))
+* **deps:** bump the github-owned group with 2 updates ([#212](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/212)) ([6045b10](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/6045b10983dc437681860f1b19f1370e353debcc))
+
+
+### Dependencies
+
+* **deps-dev:** bump prettier from 3.9.6 to 3.9.7 ([#211](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/211)) ([65fa118](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/65fa1183b1ae7b2c9c399c27b54d3b5140d05650))
+* **deps:** bump ghcr.io/devcontainers/features/github-cli ([#206](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/206)) ([68f05f6](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/68f05f66343a4d5b4b503b202d5f14acba55846e))
+* **deps:** bump ghcr.io/devcontainers/features/github-cli ([#210](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/210)) ([dc52ec0](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/dc52ec0b3a1f38eb8e81f6c11c7c283bc29dd56a))
+
+
+### Features
+
+* **index:** decode mojibake instead of using a lookup table ([#209](https://github.com/Fdawgs/fix-latin1-to-utf8/issues/209)) ([efc96db](https://github.com/Fdawgs/fix-latin1-to-utf8/commit/efc96db11ce04628e5cff2d84448af8af918b139))
+
 ## [3.0.3](https://github.com/Fdawgs/fix-latin1-to-utf8/compare/v3.0.2...v3.0.3) (2026-08-28)
 
 
